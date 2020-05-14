@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import java.io.File;
 
-public final class Usuario extends Persona {
+public class Usuario extends Persona {
 
     private String nacionalidad;
     private ArrayList<String> preferencias;
@@ -28,6 +28,13 @@ public final class Usuario extends Persona {
         this.setPreferencias(listaPreferencias);
         this.setRestricciones(listaRestricciones);
         this.setAlimentosIngeridos(listaAlimentos);
+    }
+    
+    public Usuario(){
+        this.nacionalidad = "";
+        this.preferencias = new ArrayList<String>();
+        this.restricciones= new ArrayList<String>() ;
+        this.alimentosIngeridos = new ArrayList<Ingesta>();
     }
 
     public String getNacionalidad() {
