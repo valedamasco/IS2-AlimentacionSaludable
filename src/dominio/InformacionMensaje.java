@@ -14,6 +14,12 @@ public final class InformacionMensaje implements Serializable {
         setDestinatario(dst);
         setMensaje(elMensaje);
     }
+    
+    public InformacionMensaje(){
+        this.mensaje = "";
+        this.destinatario = "";
+        this.remitente = "";
+    }
 
     public String getMensaje() {
         return mensaje;

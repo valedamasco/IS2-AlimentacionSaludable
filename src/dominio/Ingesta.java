@@ -14,6 +14,11 @@ public final class Ingesta implements Serializable {
         setFechaDeIngesta(f);
         setLAPF(LA);
     }
+    
+    public Ingesta(){
+        this.fechaDeIngesta = "";
+        this.listaAlimentosPorFecha = new ArrayList<Alimento>();
+    }
 
     public String getFechaDeIngesta() {
         return this.fechaDeIngesta;

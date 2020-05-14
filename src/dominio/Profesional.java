@@ -8,14 +8,7 @@ public final class Profesional extends Persona {
     private String fechaGraduacion;
     private String paisGraduacion;
 
-    public Profesional(String unNombre,
-            String unApellido,
-            String unaFechaNacimiento,
-            ImageIcon unaFoto,
-            String unTitulo,
-            String unaFechaGraduacion,
-            String unPaisGraduacion) {
-
+    public Profesional(String unNombre,String unApellido, String unaFechaNacimiento, ImageIcon unaFoto, String unTitulo, String unaFechaGraduacion, String unPaisGraduacion) {
         setNombre(unNombre);
         setApellido(unApellido);
         setFechaNacimiento(unaFechaNacimiento);
@@ -24,6 +17,28 @@ public final class Profesional extends Persona {
         setFechaGraduacion(unaFechaGraduacion);
         setPaisGraduacion(unPaisGraduacion);
     }
+    
+    public Profesional(Persona persona){
+        this.fechaGraduacion = "";
+        this.tituloProfesional = "";
+        this.paisGraduacion = "";
+        setNombre(persona.getNombre());
+        setApellido(persona.getApellido());
+        setFechaNacimiento(persona.getFechaNacimiento());
+        setFotoDePerfil(persona.getFotoDePerfil());
+    }
+    
+    public Profesional(String unNombre,String unApellido, String unaFechaNacimiento, ImageIcon unaFoto){
+        this.fechaGraduacion = "";
+        this.tituloProfesional = "";
+        this.paisGraduacion = "";
+        setNombre(unNombre);
+        setApellido(unApellido);
+        setFechaNacimiento(unaFechaNacimiento);
+        setFotoDePerfil(unaFoto);
+    }
+    
+    
 
     public String getTituloProfesional() {
         return this.tituloProfesional;
