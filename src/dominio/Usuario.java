@@ -30,11 +30,26 @@ public class Usuario extends Persona {
         this.setAlimentosIngeridos(listaAlimentos);
     }
     
-    public Usuario(){
+    public Usuario(Persona persona){
         this.nacionalidad = "";
         this.preferencias = new ArrayList<String>();
         this.restricciones= new ArrayList<String>() ;
         this.alimentosIngeridos = new ArrayList<Ingesta>();
+        setNombre(persona.getNombre());
+        setApellido(persona.getApellido());
+        setFechaNacimiento(persona.getFechaNacimiento());
+        setFotoDePerfil(persona.getFotoDePerfil());
+    }
+    
+    public Usuario(String unNombre,String unApellido, String unaFechaNacimiento, ImageIcon unaFoto){
+        this.nacionalidad = "";
+        this.preferencias = new ArrayList<String>();
+        this.restricciones= new ArrayList<String>() ;
+        this.alimentosIngeridos = new ArrayList<Ingesta>();
+        setNombre(unNombre);
+        setApellido(unApellido);
+        setFechaNacimiento(unaFechaNacimiento);
+        setFotoDePerfil(unaFoto);
     }
 
     public String getNacionalidad() {
