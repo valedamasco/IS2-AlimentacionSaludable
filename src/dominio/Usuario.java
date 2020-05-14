@@ -113,6 +113,14 @@ public class Usuario extends Persona {
         return super.toString();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        Usuario otroUsuario = (Usuario) obj;
+        return (this.getApellido().equals(otroUsuario.getApellido())
+                && this.getNombre().equals(otroUsuario.getNombre())
+                && this.getFechaNacimiento().equals(otroUsuario.getFechaNacimiento()));
+    }
+    
     public void actualizarPreferenciasUsuario(Usuario usuario, ArrayList<String> pr) {
         usuario.setPreferencias(pr);
     }
