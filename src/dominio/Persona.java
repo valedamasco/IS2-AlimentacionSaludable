@@ -4,13 +4,20 @@ import java.util.Objects;
 import java.io.Serializable;
 import javax.swing.ImageIcon;
 
-public abstract class Persona implements Serializable {
+public class Persona implements Serializable {
 
     private String nombre;
     private String apellido;
     private String fechaNacimiento;
     public ImageIcon fotoDePerfil;
 
+    public Persona(){
+        this.nombre = "";
+        this.apellido = "";
+        this.fechaNacimiento = "";
+        this.fotoDePerfil = null;
+    }
+    
     public String getNombre() {
         return this.nombre;
     }

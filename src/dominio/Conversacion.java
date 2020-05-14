@@ -17,6 +17,13 @@ public final class Conversacion implements Serializable {
         setListaMensajes(lista);
         setFueAtendidaConsulta(false);
     }
+    
+    public Conversacion(){
+        this.listaMensajes = new ArrayList<InformacionMensaje>();
+        this.usuario = new Persona();
+        this.profesional = new Persona();
+        this.fueAtendidaConsulta = false;
+    }
 
     public boolean getFueAtendidaConsulta() {
         return fueAtendidaConsulta;

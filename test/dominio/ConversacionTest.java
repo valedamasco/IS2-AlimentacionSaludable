@@ -7,14 +7,12 @@ import static org.junit.Assert.*;
 
 public class ConversacionTest {
 
-    public ConversacionTest() {
-    }
 
     @Test
     public void testGetSetsNullUsuario() {
-        Persona usuario = null;
-        Persona profesional = null;
-        ArrayList listaMensajes = null;
+        Persona usuario = new Persona();
+        Persona profesional = new Persona();
+        ArrayList listaMensajes = new ArrayList();
         Conversacion conversacionATestear = new Conversacion(usuario, profesional, listaMensajes);
         Persona usuarioEsperado = new Usuario(null, null, null, null, null, null, null, null);
         assertEquals(conversacionATestear.getUsuario(), usuarioEsperado);
