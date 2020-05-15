@@ -22,8 +22,7 @@ public class ConversacionTest {
     public void testGetSetsNullUsuario() {
         ArrayList listaMensajes = new ArrayList();
         Conversacion conversacionATestear = new Conversacion(this.personaUsuario, this.personaProfesional, listaMensajes);
-        Persona usuarioEsperado = new Usuario(this.personaUsuario);
-        boolean usuarioAreEquals = usuarioEsperado.equals(conversacionATestear.getUsuario());
+        boolean usuarioAreEquals = this.personaUsuario.equals(conversacionATestear.getUsuario());
         assertTrue(usuarioAreEquals);
     }
 
@@ -31,8 +30,7 @@ public class ConversacionTest {
     public void testGetSetsNullProfesional() {
         ArrayList listaMensajes = new ArrayList();
         Conversacion conversacionATestear = new Conversacion(this.personaUsuario, this.personaProfesional, listaMensajes);
-        Persona profesionalEsperado = new Profesional(this.personaProfesional);
-        boolean usuarioAreEquals = profesionalEsperado.equals(conversacionATestear.getProfesional());
+        boolean usuarioAreEquals = this.personaProfesional.equals(conversacionATestear.getProfesional());
         assertTrue(usuarioAreEquals);
     }
 
@@ -57,7 +55,8 @@ public class ConversacionTest {
         Persona profesional = new Profesional(this.personaProfesional);
         ArrayList listaMensajes = new ArrayList<>();
         Conversacion conversacionATestear = new Conversacion(usuario, profesional, listaMensajes);
-        assertEquals(conversacionATestear.getProfesional(), profesional);
+        boolean usuarioAreEquals = profesional.equals(conversacionATestear.getProfesional());
+        assertTrue(usuarioAreEquals);
     }
 
     @Test
