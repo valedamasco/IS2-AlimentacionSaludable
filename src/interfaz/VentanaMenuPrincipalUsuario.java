@@ -2,6 +2,7 @@ package interfaz;
 
 import dominio.Alimento;
 import dominio.Ingesta;
+import dominio.Persona;
 import dominio.PlanAlimentacion;
 import dominio.Profesional;
 import dominio.Sistema;
@@ -1194,7 +1195,9 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         this.btnConsultaConProfesional.setEnabled(false);
         if (sistema.getListaProfesionales().size() > 0) {
             this.listaConversaciones.setSelectedIndex(0);
-            String[] lista = sistema.getListaNombresProfesionalesConversaciones(sistema.getPersonaLogueada().getNombreCompleto());
+            Persona personaLoggeada = sistema.getPersonaLogueada();
+            String nombreCompleto  = personaLoggeada.getNombreCompleto();
+            String[] lista = sistema.getListaNombresProfesionalesConversaciones(nombreCompleto);
             if (lista.length > 0) {
                 this.listaConversaciones.setListData(lista);
                 this.existeConversacion = true;

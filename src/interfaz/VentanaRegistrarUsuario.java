@@ -449,8 +449,8 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
             agregarRestriccionesUsuario(restricciones);
             boolean seAgregoUsuario = this.getSistema().crearUsuario(nombre, apellido, fechaNacimiento, this.fotoDePerfilActual, nacionalidad, preferencias, restricciones, alimentosIngeridosPorFecha);
             if (seAgregoUsuario) {
-                this.txtNombre.setText("");
-                this.txtApellido.setText("");
+                this.txtNombre.setText(nombre);
+                this.txtApellido.setText(apellido);
                 VentanaMenuPrincipal vPrincipal = new VentanaMenuPrincipal(sistema);
                 this.setVisible(false);
                 vPrincipal.setVisible(true);

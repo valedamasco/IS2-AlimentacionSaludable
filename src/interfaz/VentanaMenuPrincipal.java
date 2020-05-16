@@ -205,7 +205,8 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
     }//GEN-LAST:event_formWindowClosing
 
     private void listaUsuariosVentanaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaUsuariosVentanaValueChanged
-        this.sistema.setPersonaLogueada((Persona) listaUsuariosVentana.getSelectedValue());
+        Persona getPersona = (Persona) listaUsuariosVentana.getSelectedValue();
+        this.sistema.setPersonaLogueada(getPersona);
         VentanaMenuPrincipalUsuario ventanaPrincipalUsuarios = new VentanaMenuPrincipalUsuario(sistema);
         this.setVisible(false);
         ventanaPrincipalUsuarios.setVisible(true);

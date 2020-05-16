@@ -18,6 +18,13 @@ public class Persona implements Serializable {
         this.fotoDePerfil = null;
     }
     
+    public Persona(String nombre, String apellido, String fechaNacimiento, ImageIcon fotoDePerfil){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.fotoDePerfil = fotoDePerfil;
+    }
+    
     public String getNombre() {
         return this.nombre;
     }
