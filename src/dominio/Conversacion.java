@@ -29,7 +29,7 @@ public final class Conversacion implements Serializable {
         this.listaMensajes = new ArrayList<InformacionMensaje>();
         this.usuario = usuario;
         this.profesional = profesional;
-        this.fueAtendidaConsulta = false;
+        this.fueAtendidaConsulta = true;
     }
 
     public boolean getFueAtendidaConsulta() {

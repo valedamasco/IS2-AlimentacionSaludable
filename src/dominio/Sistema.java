@@ -82,6 +82,18 @@ public final class Sistema implements Serializable {
     public ArrayList<Profesional> getListaProfesionales() {
         return this.listaProfesionales;
     }
+    
+    public String[] getListaProfesionalesToString() {
+        ArrayList<Profesional> lista = this.listaProfesionales;
+        String[] listaProfesionales = null;
+        if (lista.size() > 0) {
+            listaProfesionales = new String[lista.size()];
+            for (int i = 0; i < lista.size(); i++) {
+                listaProfesionales[i] = lista.toString();
+            }
+        }        
+        return listaProfesionales;
+    }
 
     public void setListaProfesionales(ArrayList<Profesional> unaListaProfesionales) {
         if (unaListaProfesionales == null) {
@@ -276,20 +288,34 @@ public final class Sistema implements Serializable {
         return fueAgregadaConversacion;
     }
 
-    public String[] getListaNombresProfesionalesConversaciones(String nombreUsuarioConversacion) {
+    public String[] getListaNombresProfesionales() {
         String[] nombresProfesionales = new String[getListaConversaciones().size()];
-        ArrayList<String> nombresIngresados = new ArrayList<>();
         for (int i = 0; i < getListaConversaciones().size(); i++) {
             String nombreCompleto = getListaConversaciones().get(i).getProfesional().getNombreCompleto();
-            String nombreUsuarioCompleto = getListaConversaciones().get(i).getUsuario().getNombreCompleto();
-            if (!nombresIngresados.contains(nombreCompleto)) {
-                if (nombreUsuarioCompleto.equals(nombreUsuarioConversacion)) {
-                    nombresProfesionales[i] = nombreCompleto;
-                    nombresIngresados.add(nombreCompleto);
-                }
-            }
+            nombresProfesionales[i] = nombreCompleto;
         }
         return nombresProfesionales;
+    }
+    
+    public boolean hayConversasionConProfesional(String nombreUsuario, String nombreProfesional){
+        boolean hayConversacion = false;
+        ArrayList<Conversacion> listaConversaciones = this.getListaConversaciones();
+        for (int i = 0; i<listaConversaciones.size() ; i++ ){
+            hayConversacion = listaConversaciones.get(i).getUsuario().getNombreCompleto().equals(nombreUsuario)
+                    && listaConversaciones.get(i).getProfesional().getNombreCompleto().equals(nombreProfesional);
+        }
+        return hayConversacion;
+    }
+    
+    public Persona busquedaProfesional(String nombreProfesional){
+        Persona profesional = null;
+        ArrayList<Profesional> listaProfesionales = this.getListaProfesionales();
+        for (int i = 0; i<listaProfesionales.size() ; i++ ){
+            if (listaProfesionales.get(i).getNombreCompleto().equals(nombreProfesional)){
+                profesional = listaProfesionales.get(i);
+            }
+        }
+        return profesional;
     }
 
     public String[] getListaNombresUsuariosConversacionesPendientes(String profesional) {
