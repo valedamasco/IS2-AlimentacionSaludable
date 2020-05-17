@@ -1134,7 +1134,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         ocultarPaneles();
         this.btnConsultaConProfesional.setEnabled(false);
         if (sistema.getListaProfesionales().size() > 0) {
-            //this.listaConversaciones.setSelectedIndex(0);
+            this.listaConversaciones.setSelectedIndex(0);
             Persona personaLoggeada = sistema.getPersonaLogueada();
             String nombreCompleto  = personaLoggeada.getNombreCompleto();
             ArrayList<Profesional> listaProfesionales = sistema.getListaProfesionales();

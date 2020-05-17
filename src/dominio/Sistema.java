@@ -289,9 +289,9 @@ public final class Sistema implements Serializable {
     }
 
     public String[] getListaNombresProfesionales() {
-        String[] nombresProfesionales = new String[getListaConversaciones().size()];
-        for (int i = 0; i < getListaConversaciones().size(); i++) {
-            String nombreCompleto = getListaConversaciones().get(i).getProfesional().getNombreCompleto();
+        String[] nombresProfesionales = new String[this.getListaProfesionales().size()];
+        for (int i = 0; i < getListaProfesionales().size(); i++) {
+            String nombreCompleto = getListaProfesionales().get(i).getNombreCompleto();
             nombresProfesionales[i] = nombreCompleto;
         }
         return nombresProfesionales;
