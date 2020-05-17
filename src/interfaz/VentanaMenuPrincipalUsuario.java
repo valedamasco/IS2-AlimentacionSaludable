@@ -1241,7 +1241,6 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             this.primeraIngesta = true;
             this.comboAlimentosEnSistema.setSelectedIndex(0);
         }
-        this.panelAlimentoIngerido.setVisible(false);
     }//GEN-LAST:event_btnNuevaIngestaActionPerformed
 
     private void btnVerPlanesExistentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPlanesExistentesActionPerformed
