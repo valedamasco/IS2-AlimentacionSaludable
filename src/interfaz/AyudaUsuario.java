@@ -35,7 +35,7 @@ public class AyudaUsuario extends javax.swing.JDialog {
         textDesayuno3 = new javax.swing.JTextArea();
         jScrollPane16 = new javax.swing.JScrollPane();
         textDesayuno4 = new javax.swing.JTextArea();
-        btnCerrarAyudaUsuario = new javax.swing.JButton();
+        btnCerrarSistema = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -60,7 +60,7 @@ public class AyudaUsuario extends javax.swing.JDialog {
         lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblNombreUsuario.setText("Ayuda");
         jPanel1.add(lblNombreUsuario);
-        lblNombreUsuario.setBounds(203, 27, 192, 70);
+        lblNombreUsuario.setBounds(203, 27, 192, 78);
 
         btnIngresarAlimentoIngerido.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresarAlimentoIngerido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Chat_70px.png"))); // NOI18N
@@ -137,19 +137,19 @@ public class AyudaUsuario extends javax.swing.JDialog {
         jPanel1.add(jScrollPane16);
         jScrollPane16.setBounds(220, 300, 315, 81);
 
-        btnCerrarAyudaUsuario.setBackground(new java.awt.Color(51, 51, 51));
-        btnCerrarAyudaUsuario.setForeground(new java.awt.Color(51, 51, 51));
-        btnCerrarAyudaUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Close_Window_48px.png"))); // NOI18N
-        btnCerrarAyudaUsuario.setBorderPainted(false);
-        btnCerrarAyudaUsuario.setContentAreaFilled(false);
-        btnCerrarAyudaUsuario.setFocusPainted(false);
-        btnCerrarAyudaUsuario.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrarSistema.setBackground(new java.awt.Color(51, 51, 51));
+        btnCerrarSistema.setForeground(new java.awt.Color(51, 51, 51));
+        btnCerrarSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Close_Window_48px.png"))); // NOI18N
+        btnCerrarSistema.setBorderPainted(false);
+        btnCerrarSistema.setContentAreaFilled(false);
+        btnCerrarSistema.setFocusPainted(false);
+        btnCerrarSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarAyudaUsuarioActionPerformed(evt);
+                btnCerrarSistemaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCerrarAyudaUsuario);
-        btnCerrarAyudaUsuario.setBounds(540, 10, 50, 50);
+        jPanel1.add(btnCerrarSistema);
+        btnCerrarSistema.setBounds(540, 10, 50, 50);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 600, 600);
@@ -169,13 +169,13 @@ public class AyudaUsuario extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnIngresarAlimentoIngerido2ActionPerformed
 
-    private void btnCerrarAyudaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarAyudaUsuarioActionPerformed
+    private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
         this.dispose();
-    }//GEN-LAST:event_btnCerrarAyudaUsuarioActionPerformed
+    }//GEN-LAST:event_btnCerrarSistemaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCerrarAyudaUsuario;
+    private javax.swing.JButton btnCerrarSistema;
     private javax.swing.JButton btnIngresarAlimentoIngerido;
     private javax.swing.JButton btnIngresarAlimentoIngerido1;
     private javax.swing.JButton btnIngresarAlimentoIngerido2;
