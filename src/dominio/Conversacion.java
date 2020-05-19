@@ -24,13 +24,6 @@ public final class Conversacion implements Serializable {
         this.profesional = new Persona();
         this.fueAtendidaConsulta = false;
     }
-    
-    public Conversacion(Persona usuario, Persona profesional){
-        this.listaMensajes = new ArrayList<InformacionMensaje>();
-        this.usuario = usuario;
-        this.profesional = profesional;
-        this.fueAtendidaConsulta = false;
-    }
 
     public boolean getFueAtendidaConsulta() {
         return fueAtendidaConsulta;
