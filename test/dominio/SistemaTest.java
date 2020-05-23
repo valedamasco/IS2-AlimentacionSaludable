@@ -6,6 +6,7 @@ import dominio.Sistema.Paises;
 import dominio.Sistema.Preferencias;
 import dominio.Sistema.Restricciones;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -661,11 +662,33 @@ public class SistemaTest {
     }
     
  
-      
+     @Test
+     public void testCrearProfesional ()
+     {
+        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+        boolean fueAgregadoProfesional = sistemaATestear.crearProfesional("Lola", "Arocena", "30/11/1994", null, "Ingeniero en Alimentos", "20/3/2019", "Uruguay");
+        assertTrue(fueAgregadoProfesional);
+    }
+     
+     @Test 
+     public void testCrearConversacionAUsuarioYaExistente ()
+     {
+        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+         Usuario usuario = new Usuario("Gonzalo","Figueroa", "5/3/1976",null,"Uruguaya", null, null, null);
+         Profesional profesional = new Profesional ("Lola", "Arocena", "30/11/1994", null, "Ingeniero en Alimentos", "20/3/2019", "Uruguay");
+         sistemaATestear.getListaProfesionales().add(profesional);
+         sistemaATestear.getListaUsuarios().add(usuario);
+         boolean fueAgregadaConversacion = sistemaATestear.crearConversacion(usuario, profesional, "hola", true);
+         assertTrue(fueAgregadaConversacion);
+     }
+    
+     
+         
+     }
+
      
           
    
-    }
-
+   
 
 
