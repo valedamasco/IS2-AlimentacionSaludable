@@ -3,6 +3,14 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+build/
+*.properties
+*.jar
+build/.DS_Store
+*.xml
+javadoc/ 
+
+
 # User-specific files
 *.rsuser
 *.suo
@@ -349,3 +357,11 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+build/built-jar.properties
+dist/AlimentacionSaludable.jar
+build/built-jar.properties
+build/built-jar.properties
+dist/AlimentacionSaludable.jar
+build/built-jar.properties
+.DS_Store
+dist/AlimentacionSaludable.jar
