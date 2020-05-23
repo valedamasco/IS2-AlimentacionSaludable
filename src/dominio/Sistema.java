@@ -52,8 +52,7 @@ public final class Sistema implements Serializable {
     }
 
     public void setPersonaLogueada(Persona personaLogueada) {
-        personaLogueada = personaLogueada;
-        
+        this.personaLogueada = personaLogueada;        
     }
 
     public ArrayList<Conversacion> getListaConversaciones() {
@@ -280,7 +279,7 @@ public final class Sistema implements Serializable {
     public String[] getListaNombresProfesionalesConversaciones(String nombreUsuarioConversacion) {
         String[] nombresProfesionales = new String[getListaConversaciones().size()];
         ArrayList<String> nombresIngresados = new ArrayList<>();
-        for (int i = 1; i < getListaConversaciones().size(); i++) {
+        for (int i = 0; i < getListaConversaciones().size(); i++) {
             String nombreCompleto = getListaConversaciones().get(i).getProfesional().getNombreCompleto();
             String nombreUsuarioCompleto = getListaConversaciones().get(i).getUsuario().getNombreCompleto();
             if (!nombresIngresados.contains(nombreCompleto)) {

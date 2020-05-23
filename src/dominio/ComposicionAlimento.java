@@ -11,6 +11,11 @@ public final class ComposicionAlimento implements Serializable {
         this.setNutriente(unNutriente);
         this.setProporcion(unaProporcion);
     }
+    
+    public ComposicionAlimento(){
+        this.nutriente = "";
+        this.proporcion = -1;
+    }
 
     public String getNutriente() {
         return this.nutriente;

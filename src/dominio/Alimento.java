@@ -23,6 +23,13 @@ public final class Alimento implements Serializable {
         this.setListaNutrientesConProporcion(listaNutrientes);
         this.setFotoDelAlimento(foto);
     }
+    
+    public Alimento(){
+        this.nombre = "";
+        this.tipoAlimento = "";
+        this.listaNutrientesConProporcion = new ArrayList<ComposicionAlimento>();
+        this.fotoDelAlimento = null;
+    }
 
     public String getNombre() {
         return this.nombre;

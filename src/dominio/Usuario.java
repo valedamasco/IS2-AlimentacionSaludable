@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import java.io.File;
 
-public final class Usuario extends Persona {
+public class Usuario extends Persona {
 
     private String nacionalidad;
     private ArrayList<String> preferencias;
@@ -28,6 +28,28 @@ public final class Usuario extends Persona {
         this.setPreferencias(listaPreferencias);
         this.setRestricciones(listaRestricciones);
         this.setAlimentosIngeridos(listaAlimentos);
+    }
+    
+    public Usuario(Persona persona){
+        this.nacionalidad = "";
+        this.preferencias = new ArrayList<String>();
+        this.restricciones= new ArrayList<String>() ;
+        this.alimentosIngeridos = new ArrayList<Ingesta>();
+        setNombre(persona.getNombre());
+        setApellido(persona.getApellido());
+        setFechaNacimiento(persona.getFechaNacimiento());
+        setFotoDePerfil(persona.getFotoDePerfil());
+    }
+    
+    public Usuario(String unNombre,String unApellido, String unaFechaNacimiento, ImageIcon unaFoto){
+        this.nacionalidad = "";
+        this.preferencias = new ArrayList<String>();
+        this.restricciones= new ArrayList<String>() ;
+        this.alimentosIngeridos = new ArrayList<Ingesta>();
+        setNombre(unNombre);
+        setApellido(unApellido);
+        setFechaNacimiento(unaFechaNacimiento);
+        setFotoDePerfil(unaFoto);
     }
 
     public String getNacionalidad() {
@@ -106,6 +128,14 @@ public final class Usuario extends Persona {
         return super.toString();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        Usuario otroUsuario = (Usuario) obj;
+        return (this.getApellido().equals(otroUsuario.getApellido())
+                && this.getNombre().equals(otroUsuario.getNombre())
+                && this.getFechaNacimiento().equals(otroUsuario.getFechaNacimiento()));
+    }
+    
     public void actualizarPreferenciasUsuario(Usuario usuario, ArrayList<String> pr) {
         usuario.setPreferencias(pr);
     }

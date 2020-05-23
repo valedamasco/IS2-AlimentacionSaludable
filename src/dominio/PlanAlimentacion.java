@@ -24,6 +24,14 @@ public final class PlanAlimentacion implements Serializable {
         setFueAtendidoElPlan(fueAtendido);
         setPlanDiaADia(unPlan);
     }
+    
+    public PlanAlimentacion(Usuario usuario, Profesional profesional){
+        this.nombreDelPlan = "";
+        this.usuario = usuario ;
+        this.profesional = profesional;
+        this.fueAtendidoElPlan = false;
+        this.planDiaADia = null;
+    }
 
     public Persona getUsuario() {
         return usuario;

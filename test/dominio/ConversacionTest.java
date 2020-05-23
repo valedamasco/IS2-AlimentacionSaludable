@@ -4,65 +4,65 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 public class ConversacionTest {
-
-    public ConversacionTest() {
+    
+    Persona personaUsuario;
+    Persona personaProfesional;
+    
+    @Before
+    public void setUp() throws Exception {
+        personaUsuario = new Persona();
+        personaProfesional = new Persona();
     }
+
 
     @Test
     public void testGetSetsNullUsuario() {
-        Persona usuario = null;
-        Persona profesional = null;
-        ArrayList listaMensajes = null;
-        Conversacion conversacionATestear = new Conversacion(usuario, profesional, listaMensajes);
-        Persona usuarioEsperado = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(conversacionATestear.getUsuario(), usuarioEsperado);
+        ArrayList listaMensajes = new ArrayList();
+        Conversacion conversacionATestear = new Conversacion(this.personaUsuario, this.personaProfesional, listaMensajes);
+        boolean usuarioAreEquals = this.personaUsuario.equals(conversacionATestear.getUsuario());
+        assertTrue(usuarioAreEquals);
     }
 
     @Test
     public void testGetSetsNullProfesional() {
-        Persona usuario = null;
-        Persona profesional = null;
-        ArrayList listaMensajes = null;
-        Conversacion conversacionATestear = new Conversacion(usuario, profesional, listaMensajes);
-        Persona profesionalEsperado = new Profesional(null, null, null, null, null, null, null);
-        assertEquals(conversacionATestear.getProfesional(), profesionalEsperado);
+        ArrayList listaMensajes = new ArrayList();
+        Conversacion conversacionATestear = new Conversacion(this.personaUsuario, this.personaProfesional, listaMensajes);
+        boolean usuarioAreEquals = this.personaProfesional.equals(conversacionATestear.getProfesional());
+        assertTrue(usuarioAreEquals);
     }
 
     @Test
     public void testGetSetsNullLsitaMensajes() {
-        Persona usuario = null;
-        Persona profesional = null;
-        ArrayList listaMensajes = null;
-        Conversacion conversacionATestear = new Conversacion(usuario, profesional, listaMensajes);
+        ArrayList listaMensajes = new ArrayList();
+        Conversacion conversacionATestear = new Conversacion(this.personaUsuario, this.personaProfesional, listaMensajes);
         assertEquals(conversacionATestear.getListaMensajes().size(), 0);
     }
 
     @Test
     public void testGetSetsNullToString() {
-        Persona usuario = null;
-        Persona profesional = null;
-        ArrayList listaMensajes = null;
-        Conversacion conversacionATestear = new Conversacion(usuario, profesional, listaMensajes);
+        ArrayList listaMensajes = new ArrayList();
+        Conversacion conversacionATestear = new Conversacion(this.personaUsuario, this.personaProfesional, listaMensajes);
         assertEquals(conversacionATestear.toString(), "No hay mensajes para mostrar");
     }
 
 
     @Test
     public void testGetSetsDatosVaciosProfesional() {
-        Persona usuario = new Usuario(null, null, null, null, null, null, null, null);
-        Persona profesional = new Profesional(null, null, null, null, null, null, null);
+        Persona usuario = new Usuario(this.personaUsuario);
+        Persona profesional = new Profesional(this.personaProfesional);
         ArrayList listaMensajes = new ArrayList<>();
         Conversacion conversacionATestear = new Conversacion(usuario, profesional, listaMensajes);
-        Persona profesionalEsperado = new Profesional(null, null, null, null, null, null, null);
-        assertEquals(conversacionATestear.getProfesional(), profesionalEsperado);
+        boolean usuarioAreEquals = profesional.equals(conversacionATestear.getProfesional());
+        assertTrue(usuarioAreEquals);
     }
 
     @Test
     public void testGetSetsDatosVaciosListaMensajes() {
-        Persona usuario = new Usuario(null, null, null, null, null, null, null, null);
-        Persona profesional = new Profesional(null, null, null, null, null, null, null);
+        Persona usuario = new Usuario(this.personaUsuario);
+        Persona profesional = new Profesional(this.personaProfesional);
         ArrayList listaMensajes = new ArrayList<>();
         Conversacion conversacionATestear = new Conversacion(usuario, profesional, listaMensajes);
         assertEquals(conversacionATestear.getListaMensajes().size(), 0);
@@ -70,8 +70,8 @@ public class ConversacionTest {
 
     @Test
     public void testGetSetsDatosVaciosToString() {
-        Persona usuario = new Usuario(null, null, null, null, null, null, null, null);
-        Persona profesional = new Profesional(null, null, null, null, null, null, null);
+        Persona usuario = new Usuario(this.personaUsuario);
+        Persona profesional = new Profesional(this.personaProfesional);
         ArrayList listaMensajes = new ArrayList<>();
         Conversacion conversacionATestear = new Conversacion(usuario, profesional, listaMensajes);
         assertEquals(conversacionATestear.toString(), "No hay mensajes para mostrar");

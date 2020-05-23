@@ -17,6 +17,20 @@ public final class Conversacion implements Serializable {
         setListaMensajes(lista);
         setFueAtendidaConsulta(false);
     }
+    
+    public Conversacion(){
+        this.listaMensajes = new ArrayList<InformacionMensaje>();
+        this.usuario = new Persona();
+        this.profesional = new Persona();
+        this.fueAtendidaConsulta = false;
+    }
+    
+    public Conversacion(Persona usuario, Persona profesional){
+        this.listaMensajes = new ArrayList<InformacionMensaje>();
+        this.usuario = usuario;
+        this.profesional = profesional;
+        this.fueAtendidaConsulta = false;
+    }
 
     public boolean getFueAtendidaConsulta() {
         return fueAtendidaConsulta;
@@ -43,11 +57,7 @@ public final class Conversacion implements Serializable {
     }
 
     public void setUsuario(Persona unUsuario) {
-        if (unUsuario == null) {
-            this.usuario = new Usuario(null, null, null, null, null, null, null, null);
-        } else {
-            this.usuario = unUsuario;
-        }
+        this.usuario = unUsuario;
     }
 
     public Persona getProfesional() {
@@ -55,11 +65,7 @@ public final class Conversacion implements Serializable {
     }
 
     public void setProfesional(Persona unProfesional) {
-        if (unProfesional == null) {
-            this.profesional = new Profesional(null, null, null, null, null, null, null);
-        } else {
-            this.profesional = unProfesional;
-        }
+        this.profesional = unProfesional;
     }
 
     public boolean agregarMensaje(String mensaje, boolean intercambioRemitente) {
