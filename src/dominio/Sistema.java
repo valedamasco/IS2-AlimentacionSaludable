@@ -276,18 +276,14 @@ public final class Sistema implements Serializable {
         return fueAgregadaConversacion;
     }
 
-    public String[] getListaNombresProfesionalesConversaciones(String nombreUsuarioConversacion) {
-        String[] nombresProfesionales = new String[getListaConversaciones().size()];
+    public String[] getListaNombresProfesionales() {
+        String[] nombresProfesionales = new String[this.getListaProfesionales().size()];
         ArrayList<String> nombresIngresados = new ArrayList<>();
-        for (int i = 0; i < getListaConversaciones().size(); i++) {
-            String nombreCompleto = getListaConversaciones().get(i).getProfesional().getNombreCompleto();
-            String nombreUsuarioCompleto = getListaConversaciones().get(i).getUsuario().getNombreCompleto();
-            if (!nombresIngresados.contains(nombreCompleto)) {
-                if (nombreUsuarioCompleto.equals(nombreUsuarioConversacion)) {
-                    nombresProfesionales[i] = nombreCompleto;
-                    nombresIngresados.add(nombreCompleto);
-                }
-            }
+        String nombreCompleto;
+        for (int i = 0; i < this.getListaProfesionales().size(); i++) {
+            nombreCompleto = getListaProfesionales().get(i).getNombreCompleto();
+            nombresProfesionales[i] = nombreCompleto;
+            nombresIngresados.add(nombreCompleto);            
         }
         return nombresProfesionales;
     }
