@@ -310,13 +310,21 @@ public final class Sistema implements Serializable {
 
     public String getConversacion(String nombreCompletoProfesional, String nombreCompletoUsuario) {
         String retorno = "No hay conversación disponible.";
+        Conversacion conversacionActual = null;
         for (int i = 0; i < getListaConversaciones().size(); i++) {
-            Conversacion conversacionActual = getListaConversaciones().get(i);
+            conversacionActual = getListaConversaciones().get(i);
             String nombreCompletoProfesionalActual = conversacionActual.getProfesional().getNombreCompleto();
             String nombreUsuarioActual = conversacionActual.getUsuario().getNombreCompleto();
             if (nombreCompletoProfesionalActual.equals(nombreCompletoProfesional) && nombreUsuarioActual.equals(nombreCompletoUsuario)) {
-                return conversacionActual.toString();
+                retorno =  conversacionActual.toString();
             }
+        }
+        if (retorno.equals("No hay conversación disponible.")){
+            Persona usuario = this.getPersonaLogueada();
+            Persona profesional = this.getProfesionalPorNombre(nombreCompletoProfesional);
+            conversacionActual = new Conversacion(usuario, profesional);
+            this.getListaConversaciones().add(conversacionActual);
+            retorno =  conversacionActual.toString();
         }
         return retorno;
     }

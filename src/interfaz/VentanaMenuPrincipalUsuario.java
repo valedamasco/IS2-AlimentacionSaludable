@@ -17,7 +17,6 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
 
     private Sistema sistema;
     private String profesionalSeleccionado;
-    private boolean existeConversacion;
     private boolean primeraVez;
     private boolean primeraIngesta;
     private String nombreDelPlan;
@@ -27,7 +26,6 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         this.setLocationRelativeTo(null);
         ocultarPaneles();
         this.sistema = unSistema;
-        this.existeConversacion = false;
         this.lblValidarProfesionalPlan.setVisible(false);
         this.lblDatosIncorrectos.setVisible(false);
         this.lblDatosIncorrectos1.setVisible(false);
@@ -48,14 +46,6 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
 
     public void setSistema(Sistema unSistema) {
         this.sistema = unSistema;
-    }
-
-    public boolean getYaExisteConversacion() {
-        return existeConversacion;
-    }
-
-    public void setYaExisteConversacion(boolean existe) {
-        this.existeConversacion = existe;
     }
 
     @SuppressWarnings("unchecked")
@@ -1242,7 +1232,6 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             String nombreCompleto  = personaLoggeada.getNombreCompleto();
             String[] lista = sistema.getListaNombresProfesionales();
             this.listaConversaciones.setListData(lista);
-            this.existeConversacion = true;
             this.panelConsultaConProfesional.setVisible(true);
         } else {
             this.panelNoHayProfesionalesCreados.setVisible(true);
@@ -1284,11 +1273,11 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_btnIngresarAlimentoIngeridoActionPerformed
 
     private void listaConversacionesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaConversacionesValueChanged
-        if (this.existeConversacion && this.listaConversaciones.getSelectedValue() != null) {
+        if (this.listaConversaciones.getSelectedValue() != null) {
             this.panelConversacion.setVisible(true);
             this.profesionalSeleccionado = this.listaConversaciones.getSelectedValue();
             actualizarConversaciones(this.profesionalSeleccionado);
-        }
+        } 
     }//GEN-LAST:event_listaConversacionesValueChanged
 
     private void btnEnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarMensajeActionPerformed
