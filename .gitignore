@@ -365,3 +365,7 @@ dist/AlimentacionSaludable.jar
 build/built-jar.properties
 .DS_Store
 dist/AlimentacionSaludable.jar
+*.properties
+*.jar
+build/built-jar.properties
+dist/AlimentacionSaludable.jar
