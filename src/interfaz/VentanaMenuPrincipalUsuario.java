@@ -33,6 +33,9 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         this.lblNuevoAlimentoVacio.setVisible(false);
         this.lblDatosIncorrectos2.setVisible(false);
         this.nombreDelPlan = "";
+        this.labelNombreUsuario.setText(this.sistema.getPersonaLogueada().getNombreCompleto());
+        this.labelBienvenido.setVisible(true);
+        this.labelNombreUsuario.setVisible(true);
         this.primeraVez = true;
         this.primeraIngesta = true;
         Calendar fecha = new GregorianCalendar();
@@ -164,6 +167,8 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         panelVacio = new javax.swing.JPanel();
         btnAyuda = new javax.swing.JButton();
         btnCerrarMenuPrincipalUsuario = new javax.swing.JButton();
+        labelBienvenido = new javax.swing.JLabel();
+        labelNombreUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1060, 800));
@@ -1177,22 +1182,42 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             }
         });
 
+        labelBienvenido.setFont(new java.awt.Font("Lucida Grande", 1, 48)); // NOI18N
+        labelBienvenido.setForeground(new java.awt.Color(255, 255, 255));
+        labelBienvenido.setText("Bienvenido ");
+
+        labelNombreUsuario.setFont(new java.awt.Font("Lucida Grande", 1, 48)); // NOI18N
+        labelNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        labelNombreUsuario.setText("Nombre Usuario");
+
         javax.swing.GroupLayout panelVacioLayout = new javax.swing.GroupLayout(panelVacio);
         panelVacio.setLayout(panelVacioLayout);
         panelVacioLayout.setHorizontalGroup(
             panelVacioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelVacioLayout.createSequentialGroup()
-                .addContainerGap(702, Short.MAX_VALUE)
                 .addGroup(panelVacioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAyuda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCerrarMenuPrincipalUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelVacioLayout.createSequentialGroup()
+                        .addContainerGap(708, Short.MAX_VALUE)
+                        .addGroup(panelVacioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAyuda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCerrarMenuPrincipalUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelVacioLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addGroup(panelVacioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelVacioLayout.setVerticalGroup(
             panelVacioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVacioLayout.createSequentialGroup()
                 .addComponent(btnCerrarMenuPrincipalUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 656, Short.MAX_VALUE)
+                .addGap(144, 144, 144)
+                .addComponent(labelBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(labelNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
                 .addComponent(btnAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1497,6 +1522,8 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         this.panelNoHayProfesionalesCreados.setVisible(false);
         this.panelNoHayPlanesDisponibles.setVisible(false);
         this.panelVacio.setVisible(false);
+        this.labelBienvenido.setVisible(false);
+        this.labelNombreUsuario.setVisible(false);
     }
 
     private void actualizarConversaciones(String destinatario) {
@@ -1548,6 +1575,8 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane39;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane40;
+    private javax.swing.JLabel labelBienvenido;
+    private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel lblAlimentoIngerido;
     private javax.swing.JLabel lblAlimentoIngerido2;
     private javax.swing.JLabel lblAlimentoIngeridoSeleccionado;
