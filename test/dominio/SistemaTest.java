@@ -322,6 +322,35 @@ public class SistemaTest {
         boolean retorno = sistemaATestear.agregarIngestaAUsuario(user.getAlimentosIngeridos(), null, "Papa");
         assertFalse(retorno);
     }
+    @Test
+       public void testAgrearAlimentoOk (){
+        Alimento nuevoAlimento = new Alimento("Ensalda de frutas", "", null, null);
+        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+        boolean fueAgregadoAlimento = sistemaATestear.agregarAlimentoALaLista(nuevoAlimento);
+        assertTrue(fueAgregadoAlimento);
+        
+    }
+    @Test
+       public void testAgrearAlimentoYaExistente (){
+        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        Alimento alimentoExistente = new Alimento("Ensalda de frutas", "", null, null);
+        listaAlimentos.add(alimentoExistente);
+        sistemaATestear.setListaAlimentos(listaAlimentos);
+        boolean noFueAgregadoAlimento = sistemaATestear.agregarAlimentoALaLista(alimentoExistente);
+        assertFalse(noFueAgregadoAlimento);
+        
+    }
+    @Test
+      public void testCrearAlimento ()
+      {
+         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+         boolean fueCreadoAlimento = sistemaATestear.crearAlimento("Torta de atún", "", null, null);
+        assertTrue(fueCreadoAlimento);
+    }
+
+      
+      
 
     @Test
     public void testAgregarIngestaAlimentoRepetidoFechaDistinta() {

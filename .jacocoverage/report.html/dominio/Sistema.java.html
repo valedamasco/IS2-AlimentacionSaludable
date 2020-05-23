@@ -233,17 +233,17 @@ public final class Sistema implements Serializable {
 
     public boolean crearAlimento(String nombre, String tipoAlimento, ArrayList&lt;ComposicionAlimento&gt; listaNutrientesConProporcion, ImageIcon fotoDelAlimento) {
         Alimento an;
-<span class="nc" id="L236">        an = new Alimento(nombre, tipoAlimento, listaNutrientesConProporcion, fotoDelAlimento);</span>
-<span class="nc" id="L237">        boolean fueAgregadoAlimento = agregarAlimentoALaLista(an);</span>
-<span class="nc" id="L238">        return fueAgregadoAlimento;</span>
+<span class="fc" id="L236">        an = new Alimento(nombre, tipoAlimento, listaNutrientesConProporcion, fotoDelAlimento);</span>
+<span class="fc" id="L237">        boolean fueAgregadoAlimento = agregarAlimentoALaLista(an);</span>
+<span class="fc" id="L238">        return fueAgregadoAlimento;</span>
     }
 
     public boolean agregarAlimentoALaLista(Alimento alimentoAAgregar) {
-<span class="nc bnc" id="L242" title="All 4 branches missed.">        if (alimentoAAgregar != null &amp;&amp; !getListaAlimentos().contains(alimentoAAgregar)) {</span>
-<span class="nc" id="L243">            getListaAlimentos().add(alimentoAAgregar);</span>
-<span class="nc" id="L244">            return true;</span>
+<span class="pc bpc" id="L242" title="1 of 4 branches missed.">        if (alimentoAAgregar != null &amp;&amp; !getListaAlimentos().contains(alimentoAAgregar)) {</span>
+<span class="fc" id="L243">            getListaAlimentos().add(alimentoAAgregar);</span>
+<span class="fc" id="L244">            return true;</span>
         }
-<span class="nc" id="L246">        return false;</span>
+<span class="fc" id="L246">        return false;</span>
     }
 
     public boolean crearConversacion(Persona usuario, Persona profesional, String mensaje, boolean usuarioEsRemitente) {
