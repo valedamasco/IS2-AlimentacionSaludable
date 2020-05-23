@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>VentanaMenuPrincipal.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">VentanaMenuPrincipal.java</span></div><h1>VentanaMenuPrincipal.java</h1><pre class="source lang-java linenums">package interfaz;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>VentanaMenuPrincipal.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">VentanaMenuPrincipal.java</span></div><h1>VentanaMenuPrincipal.java</h1><pre class="source lang-java linenums">package interfaz;
 
 import dominio.Persona;
 import dominio.Sistema;
@@ -205,41 +205,42 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
 <span class="nc" id="L205">    }//GEN-LAST:event_formWindowClosing</span>
 
     private void listaUsuariosVentanaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaUsuariosVentanaValueChanged
-<span class="nc" id="L208">        this.sistema.setPersonaLogueada((Persona) listaUsuariosVentana.getSelectedValue());</span>
-<span class="nc" id="L209">        VentanaMenuPrincipalUsuario ventanaPrincipalUsuarios = new VentanaMenuPrincipalUsuario(sistema);</span>
-<span class="nc" id="L210">        this.setVisible(false);</span>
-<span class="nc" id="L211">        ventanaPrincipalUsuarios.setVisible(true);</span>
-<span class="nc" id="L212">    }//GEN-LAST:event_listaUsuariosVentanaValueChanged</span>
+<span class="nc" id="L208">        Persona getPersona = (Persona) listaUsuariosVentana.getSelectedValue();</span>
+<span class="nc" id="L209">        this.sistema.setPersonaLogueada(getPersona);</span>
+<span class="nc" id="L210">        VentanaMenuPrincipalUsuario ventanaPrincipalUsuarios = new VentanaMenuPrincipalUsuario(sistema);</span>
+<span class="nc" id="L211">        this.setVisible(false);</span>
+<span class="nc" id="L212">        ventanaPrincipalUsuarios.setVisible(true);</span>
+<span class="nc" id="L213">    }//GEN-LAST:event_listaUsuariosVentanaValueChanged</span>
 
     private void listaProfesionalesVentanaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaProfesionalesVentanaValueChanged
-<span class="nc" id="L215">        this.sistema.setPersonaLogueada((Persona) listaProfesionalesVentana.getSelectedValue());</span>
-<span class="nc" id="L216">        VentanaMenuPrincipalProfesional ventanaPrincipalProfesionales = new VentanaMenuPrincipalProfesional(sistema);</span>
-<span class="nc" id="L217">        this.setVisible(false);</span>
-<span class="nc" id="L218">        ventanaPrincipalProfesionales.setVisible(true);</span>
-<span class="nc" id="L219">    }//GEN-LAST:event_listaProfesionalesVentanaValueChanged</span>
+<span class="nc" id="L216">        this.sistema.setPersonaLogueada((Persona) listaProfesionalesVentana.getSelectedValue());</span>
+<span class="nc" id="L217">        VentanaMenuPrincipalProfesional ventanaPrincipalProfesionales = new VentanaMenuPrincipalProfesional(sistema);</span>
+<span class="nc" id="L218">        this.setVisible(false);</span>
+<span class="nc" id="L219">        ventanaPrincipalProfesionales.setVisible(true);</span>
+<span class="nc" id="L220">    }//GEN-LAST:event_listaProfesionalesVentanaValueChanged</span>
 
     private void btnAgregarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarUsuarioMouseClicked
-<span class="nc" id="L222">        VentanaRegistrarUsuario unA = new VentanaRegistrarUsuario(sistema);</span>
-<span class="nc" id="L223">        this.setVisible(false);</span>
-<span class="nc" id="L224">        unA.setVisible(true);</span>
-<span class="nc" id="L225">    }//GEN-LAST:event_btnAgregarUsuarioMouseClicked</span>
+<span class="nc" id="L223">        VentanaRegistrarUsuario unA = new VentanaRegistrarUsuario(sistema);</span>
+<span class="nc" id="L224">        this.setVisible(false);</span>
+<span class="nc" id="L225">        unA.setVisible(true);</span>
+<span class="nc" id="L226">    }//GEN-LAST:event_btnAgregarUsuarioMouseClicked</span>
 
     private void btnAgregarProfesionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProfesionalMouseClicked
-<span class="nc" id="L228">        VentanaRegistrarProfesional ventanaRegProfesional = new VentanaRegistrarProfesional(sistema);</span>
-<span class="nc" id="L229">        this.setVisible(false);</span>
-<span class="nc" id="L230">        ventanaRegProfesional.setVisible(true);</span>
-<span class="nc" id="L231">    }//GEN-LAST:event_btnAgregarProfesionalMouseClicked</span>
+<span class="nc" id="L229">        VentanaRegistrarProfesional ventanaRegProfesional = new VentanaRegistrarProfesional(sistema);</span>
+<span class="nc" id="L230">        this.setVisible(false);</span>
+<span class="nc" id="L231">        ventanaRegProfesional.setVisible(true);</span>
+<span class="nc" id="L232">    }//GEN-LAST:event_btnAgregarProfesionalMouseClicked</span>
 
     private void btnAgregarProfesional1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProfesional1MouseClicked
-<span class="nc" id="L234">        VentanaRegistrarProfesional ventanaRegProfesional = new VentanaRegistrarProfesional(sistema);</span>
-<span class="nc" id="L235">        this.setVisible(false);</span>
-<span class="nc" id="L236">        ventanaRegProfesional.setVisible(true);</span>
-<span class="nc" id="L237">    }//GEN-LAST:event_btnAgregarProfesional1MouseClicked</span>
+<span class="nc" id="L235">        VentanaRegistrarProfesional ventanaRegProfesional = new VentanaRegistrarProfesional(sistema);</span>
+<span class="nc" id="L236">        this.setVisible(false);</span>
+<span class="nc" id="L237">        ventanaRegProfesional.setVisible(true);</span>
+<span class="nc" id="L238">    }//GEN-LAST:event_btnAgregarProfesional1MouseClicked</span>
 
     private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
-<span class="nc" id="L240">        this.sistema.guardarDatosSistema();</span>
-<span class="nc" id="L241">        this.dispose();</span>
-<span class="nc" id="L242">    }//GEN-LAST:event_btnCerrarSistemaActionPerformed</span>
+<span class="nc" id="L241">        this.sistema.guardarDatosSistema();</span>
+<span class="nc" id="L242">        this.dispose();</span>
+<span class="nc" id="L243">    }//GEN-LAST:event_btnCerrarSistemaActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

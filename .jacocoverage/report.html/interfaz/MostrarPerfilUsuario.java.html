@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MostrarPerfilUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">MostrarPerfilUsuario.java</span></div><h1>MostrarPerfilUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MostrarPerfilUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">MostrarPerfilUsuario.java</span></div><h1>MostrarPerfilUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
 
 import dominio.Alimento;
 import dominio.Ingesta;
@@ -78,122 +78,146 @@ public class MostrarPerfilUsuario extends javax.swing.JDialog {
 <span class="nc" id="L78">        listaIngestas = new javax.swing.JList&lt;&gt;();</span>
 <span class="nc" id="L79">        lblFechaNacimientoUsuario = new javax.swing.JLabel();</span>
 <span class="nc" id="L80">        lblNombreUsuario = new javax.swing.JLabel();</span>
+<span class="nc" id="L81">        btnCerrarMostrarPerfilUsuario = new javax.swing.JButton();</span>
 
-<span class="nc" id="L82">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
-<span class="nc" id="L83">        setLocationByPlatform(true);</span>
-<span class="nc" id="L84">        setMinimumSize(new java.awt.Dimension(600, 600));</span>
-<span class="nc" id="L85">        setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);</span>
-<span class="nc" id="L86">        setResizable(false);</span>
-<span class="nc" id="L87">        getContentPane().setLayout(null);</span>
+<span class="nc" id="L83">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
+<span class="nc" id="L84">        setLocationByPlatform(true);</span>
+<span class="nc" id="L85">        setMinimumSize(new java.awt.Dimension(600, 600));</span>
+<span class="nc" id="L86">        setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);</span>
+<span class="nc" id="L87">        setResizable(false);</span>
+<span class="nc" id="L88">        getContentPane().setLayout(null);</span>
 
-<span class="nc" id="L89">        jPanel1.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L90">        jPanel1.setMaximumSize(new java.awt.Dimension(600, 600));</span>
-<span class="nc" id="L91">        jPanel1.setMinimumSize(new java.awt.Dimension(600, 600));</span>
-<span class="nc" id="L92">        jPanel1.setPreferredSize(new java.awt.Dimension(600, 600));</span>
+<span class="nc" id="L90">        jPanel1.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L91">        jPanel1.setMaximumSize(new java.awt.Dimension(600, 600));</span>
+<span class="nc" id="L92">        jPanel1.setMinimumSize(new java.awt.Dimension(600, 600));</span>
+<span class="nc" id="L93">        jPanel1.setPreferredSize(new java.awt.Dimension(600, 600));</span>
 
-<span class="nc" id="L94">        lblFotoDeUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDeUsuarioStandard.png&quot;))); // NOI18N</span>
+<span class="nc" id="L95">        lblFotoDeUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDeUsuarioStandard.png&quot;))); // NOI18N</span>
 
-<span class="nc" id="L96">        lblFechaNacimiento.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 16)); // NOI18N</span>
-<span class="nc" id="L97">        lblFechaNacimiento.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L98">        lblFechaNacimiento.setText(&quot;Fecha de nacimiento:&quot;);</span>
+<span class="nc" id="L97">        lblFechaNacimiento.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 16)); // NOI18N</span>
+<span class="nc" id="L98">        lblFechaNacimiento.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L99">        lblFechaNacimiento.setText(&quot;Fecha de nacimiento:&quot;);</span>
 
-<span class="nc" id="L100">        lblRestricciones.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 16)); // NOI18N</span>
-<span class="nc" id="L101">        lblRestricciones.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L102">        lblRestricciones.setText(&quot;Restricciones:&quot;);</span>
+<span class="nc" id="L101">        lblRestricciones.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 16)); // NOI18N</span>
+<span class="nc" id="L102">        lblRestricciones.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L103">        lblRestricciones.setText(&quot;Restricciones:&quot;);</span>
 
-<span class="nc" id="L104">        jScrollPane2.setViewportView(listaRestricciones);</span>
+<span class="nc" id="L105">        jScrollPane2.setViewportView(listaRestricciones);</span>
 
-<span class="nc" id="L106">        lblPreferencias.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 16)); // NOI18N</span>
-<span class="nc" id="L107">        lblPreferencias.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L108">        lblPreferencias.setText(&quot;Preferencias:&quot;);</span>
+<span class="nc" id="L107">        lblPreferencias.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 16)); // NOI18N</span>
+<span class="nc" id="L108">        lblPreferencias.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L109">        lblPreferencias.setText(&quot;Preferencias:&quot;);</span>
 
-<span class="nc" id="L110">        jScrollPane1.setViewportView(listaPreferencias);</span>
+<span class="nc" id="L111">        jScrollPane1.setViewportView(listaPreferencias);</span>
 
-<span class="nc" id="L112">        lblTxtIngestas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 16)); // NOI18N</span>
-<span class="nc" id="L113">        lblTxtIngestas.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L114">        lblTxtIngestas.setText(&quot;Ingestas:&quot;);</span>
+<span class="nc" id="L113">        lblTxtIngestas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 16)); // NOI18N</span>
+<span class="nc" id="L114">        lblTxtIngestas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L115">        lblTxtIngestas.setText(&quot;Ingestas:&quot;);</span>
 
-<span class="nc" id="L116">        jScrollPane3.setViewportView(listaIngestas);</span>
+<span class="nc" id="L117">        jScrollPane3.setViewportView(listaIngestas);</span>
 
-<span class="nc" id="L118">        lblFechaNacimientoUsuario.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 16)); // NOI18N</span>
-<span class="nc" id="L119">        lblFechaNacimientoUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L120">        lblFechaNacimientoUsuario.setText(&quot;Fecha del usuario&quot;);</span>
+<span class="nc" id="L119">        lblFechaNacimientoUsuario.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 16)); // NOI18N</span>
+<span class="nc" id="L120">        lblFechaNacimientoUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L121">        lblFechaNacimientoUsuario.setText(&quot;Fecha del usuario&quot;);</span>
 
-<span class="nc" id="L122">        lblNombreUsuario.setFont(new java.awt.Font(&quot;Levenim MT&quot;, 0, 35)); // NOI18N</span>
-<span class="nc" id="L123">        lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L124">        lblNombreUsuario.setText(&quot;Usuario&quot;);</span>
+<span class="nc" id="L123">        lblNombreUsuario.setFont(new java.awt.Font(&quot;Levenim MT&quot;, 0, 35)); // NOI18N</span>
+<span class="nc" id="L124">        lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L125">        lblNombreUsuario.setText(&quot;Usuario&quot;);</span>
 
-<span class="nc" id="L126">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
-<span class="nc" id="L127">        jPanel1.setLayout(jPanel1Layout);</span>
-<span class="nc" id="L128">        jPanel1Layout.setHorizontalGroup(</span>
-<span class="nc" id="L129">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L130">            .addGroup(jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L131">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L132">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L133">                        .addContainerGap()</span>
-<span class="nc" id="L134">                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
-<span class="nc" id="L135">                            .addComponent(lblRestricciones)</span>
-<span class="nc" id="L136">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L137">                                .addComponent(lblTxtIngestas)</span>
-<span class="nc" id="L138">                                .addGap(28, 28, 28))</span>
-<span class="nc" id="L139">                            .addComponent(lblPreferencias))</span>
-<span class="nc" id="L140">                        .addGap(18, 18, 18)</span>
-<span class="nc" id="L141">                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L142">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L143">                                .addComponent(lblFechaNacimiento)</span>
-<span class="nc" id="L144">                                .addGap(18, 18, 18)</span>
-<span class="nc" id="L145">                                .addComponent(lblFechaNacimientoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L146">                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L147">                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L148">                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
-<span class="nc" id="L149">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L150">                        .addGap(95, 95, 95)</span>
-<span class="nc" id="L151">                        .addComponent(lblNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L152">                        .addGap(18, 18, 18)</span>
-<span class="nc" id="L153">                        .addComponent(lblFotoDeUsuario)))</span>
-<span class="nc" id="L154">                .addContainerGap(88, Short.MAX_VALUE))</span>
+<span class="nc" id="L127">        btnCerrarMostrarPerfilUsuario.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L128">        btnCerrarMostrarPerfilUsuario.setForeground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L129">        btnCerrarMostrarPerfilUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/icons8_Close_Window_48px.png&quot;))); // NOI18N</span>
+<span class="nc" id="L130">        btnCerrarMostrarPerfilUsuario.setBorderPainted(false);</span>
+<span class="nc" id="L131">        btnCerrarMostrarPerfilUsuario.setContentAreaFilled(false);</span>
+<span class="nc" id="L132">        btnCerrarMostrarPerfilUsuario.setFocusPainted(false);</span>
+<span class="nc" id="L133">        btnCerrarMostrarPerfilUsuario.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L135">                btnCerrarMostrarPerfilUsuarioActionPerformed(evt);</span>
+<span class="nc" id="L136">            }</span>
+        });
+
+<span class="nc" id="L139">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
+<span class="nc" id="L140">        jPanel1.setLayout(jPanel1Layout);</span>
+<span class="nc" id="L141">        jPanel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L142">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L143">            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L144">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L145">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L146">                        .addContainerGap()</span>
+<span class="nc" id="L147">                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L148">                            .addComponent(lblRestricciones)</span>
+<span class="nc" id="L149">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L150">                                .addComponent(lblTxtIngestas)</span>
+<span class="nc" id="L151">                                .addGap(28, 28, 28))</span>
+<span class="nc" id="L152">                            .addComponent(lblPreferencias))</span>
+<span class="nc" id="L153">                        .addGap(18, 18, 18)</span>
+<span class="nc" id="L154">                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L155">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L156">                                .addComponent(lblFechaNacimiento)</span>
+<span class="nc" id="L157">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L158">                                .addComponent(lblFechaNacimientoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L159">                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L160">                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L161">                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L162">                        .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L163">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L164">                        .addGap(95, 95, 95)</span>
+<span class="nc" id="L165">                        .addComponent(lblNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L166">                        .addGap(18, 18, 18)</span>
+<span class="nc" id="L167">                        .addComponent(lblFotoDeUsuario)</span>
+<span class="nc" id="L168">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)</span>
+<span class="nc" id="L169">                        .addComponent(btnCerrarMostrarPerfilUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L170">                .addContainerGap())</span>
         );
-<span class="nc" id="L156">        jPanel1Layout.setVerticalGroup(</span>
-<span class="nc" id="L157">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L158">            .addGroup(jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L159">                .addContainerGap()</span>
-<span class="nc" id="L160">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L161">                    .addComponent(lblFotoDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L162">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L163">                        .addComponent(lblNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L164">                        .addGap(22, 22, 22)))</span>
-<span class="nc" id="L165">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L166">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L167">                        .addGap(85, 85, 85)</span>
-<span class="nc" id="L168">                        .addComponent(lblRestricciones)</span>
-<span class="nc" id="L169">                        .addGap(94, 94, 94)</span>
-<span class="nc" id="L170">                        .addComponent(lblPreferencias)</span>
-<span class="nc" id="L171">                        .addGap(75, 75, 75)</span>
-<span class="nc" id="L172">                        .addComponent(lblTxtIngestas))</span>
-<span class="nc" id="L173">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L174">                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L175">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L176">                                .addGap(5, 5, 5)</span>
-<span class="nc" id="L177">                                .addComponent(lblFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L178">                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L179">                                .addComponent(lblFechaNacimientoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L180">                                .addGap(14, 14, 14)))</span>
-<span class="nc" id="L181">                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L182">                        .addGap(18, 18, 18)</span>
-<span class="nc" id="L183">                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L184">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L185">                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
-<span class="nc" id="L186">                .addContainerGap(146, Short.MAX_VALUE))</span>
+<span class="nc" id="L172">        jPanel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L173">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L174">            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L175">                .addContainerGap()</span>
+<span class="nc" id="L176">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L177">                    .addComponent(btnCerrarMostrarPerfilUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L178">                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L179">                        .addComponent(lblFotoDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L180">                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L181">                            .addComponent(lblNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L182">                            .addGap(22, 22, 22))))</span>
+<span class="nc" id="L183">                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L184">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L185">                        .addGap(85, 85, 85)</span>
+<span class="nc" id="L186">                        .addComponent(lblRestricciones)</span>
+<span class="nc" id="L187">                        .addGap(94, 94, 94)</span>
+<span class="nc" id="L188">                        .addComponent(lblPreferencias)</span>
+<span class="nc" id="L189">                        .addGap(75, 75, 75)</span>
+<span class="nc" id="L190">                        .addComponent(lblTxtIngestas))</span>
+<span class="nc" id="L191">                    .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L192">                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L193">                            .addGroup(jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L194">                                .addGap(5, 5, 5)</span>
+<span class="nc" id="L195">                                .addComponent(lblFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L196">                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L197">                                .addComponent(lblFechaNacimientoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L198">                                .addGap(14, 14, 14)))</span>
+<span class="nc" id="L199">                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L200">                        .addGap(18, 18, 18)</span>
+<span class="nc" id="L201">                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L202">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L203">                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L204">                .addContainerGap(142, Short.MAX_VALUE))</span>
         );
 
-<span class="nc" id="L189">        getContentPane().add(jPanel1);</span>
-<span class="nc" id="L190">        jPanel1.setBounds(0, 0, 600, 600);</span>
+<span class="nc" id="L207">        getContentPane().add(jPanel1);</span>
+<span class="nc" id="L208">        jPanel1.setBounds(0, 0, 600, 600);</span>
 
-<span class="nc" id="L192">        pack();</span>
-<span class="nc" id="L193">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L210">        pack();</span>
+<span class="nc" id="L211">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnCerrarMostrarPerfilUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarMostrarPerfilUsuarioActionPerformed
+<span class="nc" id="L214">        this.sistema.guardarDatosSistema();</span>
+<span class="nc" id="L215">        this.dispose();</span>
+<span class="nc" id="L216">    }//GEN-LAST:event_btnCerrarMostrarPerfilUsuarioActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrarMostrarPerfilUsuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

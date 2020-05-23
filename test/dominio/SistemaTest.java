@@ -89,13 +89,37 @@ public class SistemaTest {
         boolean pudeAgregarMensaje = sistemaATestear.agregarMensajeConversacion("Martin", "Lucia", "aa", false, false);
         assertFalse(pudeAgregarMensaje);
     }
-
+ 
+    @Test
+    public void testAgregarProfesionalnoExistenteALista() {
+         Sistema sistemaATestear = new Sistema();
+        ArrayList<String> listaProfesionales = null;
+        Persona persona = new Persona ("Yuliana", "Perez", "", null);
+        Profesional nuevoProfesional = new Profesional (persona);
+        boolean pudeAgregarProfesional= sistemaATestear.agregarProfesionalALaLista(nuevoProfesional);
+        assertTrue(pudeAgregarProfesional);
+    }
+   
+      @Test
+    public void testAgregarProfesionalExistenteALista() {
+         Sistema sistemaATestear = new Sistema();
+         ArrayList listaProfesionales = new ArrayList<>();
+         Profesional profesionalexistente = new Profesional("Yuliana", "Perez","", null);
+         listaProfesionales.add(profesionalexistente);
+         sistemaATestear.setListaProfesionales(listaProfesionales);
+         boolean noPudeAgregarProfesional= sistemaATestear.agregarProfesionalALaLista(profesionalexistente);
+         assertFalse(noPudeAgregarProfesional);
+    }
+    
+    
     @Test
     public void testAgregarMensajeConversacionNull() {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
         boolean pudeAgregarMensaje = sistemaATestear.agregarMensajeConversacion(null, null, "Segundo mensaje", false, false);
         assertFalse(pudeAgregarMensaje);
     }
+    
+    
 
     @Test
     public void testDevolverAlimentoNull() {
@@ -562,5 +586,40 @@ public class SistemaTest {
         listaEsperada.add("Domingo");
         assertEquals(sistemaATestear.devolverListaDiasDeLaSemana(), listaEsperada);
     }
+      @Test
+     public void testDevolverListaPaises()
+      {  
+        Sistema sistemaATestear = new Sistema();
+        ArrayList<String> listaEsperada = new ArrayList<>();
+        listaEsperada.add("Argentina");
+        listaEsperada.add("Bolivia");
+        listaEsperada.add("Brasil");
+        listaEsperada.add("Chile");
+        listaEsperada.add("Colombia");
+        listaEsperada.add("Costa Rica");
+        listaEsperada.add("Cuba");
+        listaEsperada.add("Ecuador");
+        listaEsperada.add("El Salvador");
+        listaEsperada.add("Guayana Francesa");
+        listaEsperada.add("Granada");
+        listaEsperada.add("Guatemala");
+        listaEsperada.add("Guayana");
+        listaEsperada.add("Haití");
+        listaEsperada.add("Honduras");
+        listaEsperada.add("Jamaica");
+        listaEsperada.add("México");
+        listaEsperada.add("Nicaragua");
+        listaEsperada.add("Paraguay");
+        listaEsperada.add("Panamá");
+        listaEsperada.add("Perú");
+        listaEsperada.add("Puerto Rico");
+        listaEsperada.add("República Dominicana");
+        listaEsperada.add("Surinam");
+        listaEsperada.add("Uruguay");
+        listaEsperada.add("Venezuela");
+        assertEquals(sistemaATestear.devolverListaPaises(), listaEsperada);
+        
+        
+        }
 
 }
