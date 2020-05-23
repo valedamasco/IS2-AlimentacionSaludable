@@ -267,7 +267,7 @@ public final class Sistema implements Serializable {
         return fueAgregadaConversacion;
     }
 
-    private boolean agregarConversacionALaLista(Conversacion nuevaConversacion) {
+    public boolean agregarConversacionALaLista(Conversacion nuevaConversacion) {
         boolean fueAgregadaConversacion = false;
         if (!getListaConversaciones().contains(nuevaConversacion)) {
             getListaConversaciones().add(nuevaConversacion);

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AyudaUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">AyudaUsuario.java</span></div><h1>AyudaUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AyudaUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">AyudaUsuario.java</span></div><h1>AyudaUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
 
 import dominio.Sistema;
 
@@ -35,7 +35,7 @@ public class AyudaUsuario extends javax.swing.JDialog {
 <span class="nc" id="L35">        textDesayuno3 = new javax.swing.JTextArea();</span>
 <span class="nc" id="L36">        jScrollPane16 = new javax.swing.JScrollPane();</span>
 <span class="nc" id="L37">        textDesayuno4 = new javax.swing.JTextArea();</span>
-<span class="nc" id="L38">        btnCerrarSistema = new javax.swing.JButton();</span>
+<span class="nc" id="L38">        btnCerrarAyudaUsuario = new javax.swing.JButton();</span>
 
 <span class="nc" id="L40">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
 <span class="nc" id="L41">        setAlwaysOnTop(true);</span>
@@ -60,7 +60,7 @@ public class AyudaUsuario extends javax.swing.JDialog {
 <span class="nc" id="L60">        lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L61">        lblNombreUsuario.setText(&quot;Ayuda&quot;);</span>
 <span class="nc" id="L62">        jPanel1.add(lblNombreUsuario);</span>
-<span class="nc" id="L63">        lblNombreUsuario.setBounds(203, 27, 192, 78);</span>
+<span class="nc" id="L63">        lblNombreUsuario.setBounds(203, 27, 192, 70);</span>
 
 <span class="nc" id="L65">        btnIngresarAlimentoIngerido.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L66">        btnIngresarAlimentoIngerido.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/icons8_Chat_70px.png&quot;))); // NOI18N</span>
@@ -137,19 +137,19 @@ public class AyudaUsuario extends javax.swing.JDialog {
 <span class="nc" id="L137">        jPanel1.add(jScrollPane16);</span>
 <span class="nc" id="L138">        jScrollPane16.setBounds(220, 300, 315, 81);</span>
 
-<span class="nc" id="L140">        btnCerrarSistema.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L141">        btnCerrarSistema.setForeground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L142">        btnCerrarSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/icons8_Close_Window_48px.png&quot;))); // NOI18N</span>
-<span class="nc" id="L143">        btnCerrarSistema.setBorderPainted(false);</span>
-<span class="nc" id="L144">        btnCerrarSistema.setContentAreaFilled(false);</span>
-<span class="nc" id="L145">        btnCerrarSistema.setFocusPainted(false);</span>
-<span class="nc" id="L146">        btnCerrarSistema.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L140">        btnCerrarAyudaUsuario.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L141">        btnCerrarAyudaUsuario.setForeground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L142">        btnCerrarAyudaUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/icons8_Close_Window_48px.png&quot;))); // NOI18N</span>
+<span class="nc" id="L143">        btnCerrarAyudaUsuario.setBorderPainted(false);</span>
+<span class="nc" id="L144">        btnCerrarAyudaUsuario.setContentAreaFilled(false);</span>
+<span class="nc" id="L145">        btnCerrarAyudaUsuario.setFocusPainted(false);</span>
+<span class="nc" id="L146">        btnCerrarAyudaUsuario.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L148">                btnCerrarSistemaActionPerformed(evt);</span>
+<span class="nc" id="L148">                btnCerrarAyudaUsuarioActionPerformed(evt);</span>
 <span class="nc" id="L149">            }</span>
         });
-<span class="nc" id="L151">        jPanel1.add(btnCerrarSistema);</span>
-<span class="nc" id="L152">        btnCerrarSistema.setBounds(540, 10, 50, 50);</span>
+<span class="nc" id="L151">        jPanel1.add(btnCerrarAyudaUsuario);</span>
+<span class="nc" id="L152">        btnCerrarAyudaUsuario.setBounds(540, 10, 50, 50);</span>
 
 <span class="nc" id="L154">        getContentPane().add(jPanel1);</span>
 <span class="nc" id="L155">        jPanel1.setBounds(0, 0, 600, 600);</span>
@@ -169,13 +169,13 @@ public class AyudaUsuario extends javax.swing.JDialog {
         // TODO add your handling code here:
 <span class="nc" id="L170">    }//GEN-LAST:event_btnIngresarAlimentoIngerido2ActionPerformed</span>
 
-    private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
+    private void btnCerrarAyudaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarAyudaUsuarioActionPerformed
 <span class="nc" id="L173">        this.dispose();</span>
-<span class="nc" id="L174">    }//GEN-LAST:event_btnCerrarSistemaActionPerformed</span>
+<span class="nc" id="L174">    }//GEN-LAST:event_btnCerrarAyudaUsuarioActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCerrarSistema;
+    private javax.swing.JButton btnCerrarAyudaUsuario;
     private javax.swing.JButton btnIngresarAlimentoIngerido;
     private javax.swing.JButton btnIngresarAlimentoIngerido1;
     private javax.swing.JButton btnIngresarAlimentoIngerido2;

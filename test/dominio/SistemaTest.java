@@ -562,5 +562,110 @@ public class SistemaTest {
         listaEsperada.add("Domingo");
         assertEquals(sistemaATestear.devolverListaDiasDeLaSemana(), listaEsperada);
     }
+    @Test
+       public void testAgrearAlimentoOk (){
+        Alimento nuevoAlimento = new Alimento("Ensalda de frutas", "", null, null);
+        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+        boolean fueAgregadoAlimento = sistemaATestear.agregarAlimentoALaLista(nuevoAlimento);
+        assertTrue(fueAgregadoAlimento);
+        
+    }
+    @Test
+       public void testAgrearAlimentoYaExistente (){
+        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+        ArrayList<Alimento> listaAlimentos = new ArrayList<>();
+        Alimento alimentoExistente = new Alimento("Ensalda de frutas", "", null, null);
+        listaAlimentos.add(alimentoExistente);
+        sistemaATestear.setListaAlimentos(listaAlimentos);
+        boolean noFueAgregadoAlimento = sistemaATestear.agregarAlimentoALaLista(alimentoExistente);
+        assertFalse(noFueAgregadoAlimento);
+        
+    }
+    @Test
+      public void testCrearAlimento ()
+      {
+         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+         boolean fueCreadoAlimento = sistemaATestear.crearAlimento("Torta de atún", "", null, null);
+        assertTrue(fueCreadoAlimento);
+    }
 
-}
+      
+      
+    @Test
+     public void testDevolverListaPaises()
+      {  
+        Sistema sistemaATestear = new Sistema();
+        ArrayList<String> listaEsperada = new ArrayList<>();
+        listaEsperada.add("Argentina");
+        listaEsperada.add("Bolivia");
+        listaEsperada.add("Brasil");
+        listaEsperada.add("Chile");
+        listaEsperada.add("Colombia");
+        listaEsperada.add("Costa Rica");
+        listaEsperada.add("Cuba");
+        listaEsperada.add("Ecuador");
+        listaEsperada.add("El Salvador");
+        listaEsperada.add("Guayana Francesa");
+        listaEsperada.add("Granada");
+        listaEsperada.add("Guatemala");
+        listaEsperada.add("Guayana");
+        listaEsperada.add("Haití");
+        listaEsperada.add("Honduras");
+        listaEsperada.add("Jamaica");
+        listaEsperada.add("México");
+        listaEsperada.add("Nicaragua");
+        listaEsperada.add("Paraguay");
+        listaEsperada.add("Panamá");
+        listaEsperada.add("Perú");
+        listaEsperada.add("Puerto Rico");
+        listaEsperada.add("República Dominicana");
+        listaEsperada.add("Surinam");
+        listaEsperada.add("Uruguay");
+        listaEsperada.add("Venezuela");
+        assertEquals(sistemaATestear.devolverListaPaises(), listaEsperada);
+        
+        
+        }
+  @Test
+    public void testAgregarProfesionalnoExistenteALista() {
+        Sistema sistemaATestear = new Sistema();
+        ArrayList<String> listaProfesionales = null;
+        Persona persona = new Persona ("Yuliana", "Perez", "", null);
+        Profesional nuevoProfesional = new Profesional (persona);
+        boolean pudeAgregarProfesional= sistemaATestear.agregarProfesionalALaLista(nuevoProfesional);
+        assertTrue(pudeAgregarProfesional);
+    }
+   
+      @Test
+    public void testAgregarProfesionalExistenteALista() {
+         Sistema sistemaATestear = new Sistema();
+         ArrayList listaProfesionales = new ArrayList<>();
+         Profesional profesionalexistente = new Profesional("Yuliana", "Perez","", null);
+         listaProfesionales.add(profesionalexistente);
+         sistemaATestear.setListaProfesionales(listaProfesionales);
+         boolean noPudeAgregarProfesional= sistemaATestear.agregarProfesionalALaLista(profesionalexistente);
+         assertFalse(noPudeAgregarProfesional);
+    }
+    @Test
+    public void testAgregarConversacionALaLista()
+    {
+         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
+         Persona persona1 = new Persona ("Joaquin", "Lopez", "", null);
+         Persona persona2 = new Persona ("Yuliana", "Perez", "", null);
+         InformacionMensaje informacion = new InformacionMensaje(persona1.getNombreCompleto(), persona2.getNombreCompleto(), "Hola soy celíaco");
+         ArrayList<InformacionMensaje> listaMensajes = new ArrayList<>();
+         listaMensajes.add(informacion);
+         Conversacion nuevaConversacion = new Conversacion(persona1, persona2, listaMensajes);
+         boolean fueAgregadaConversacion = sistemaATestear.agregarConversacionALaLista(nuevaConversacion);
+        assertTrue(fueAgregadaConversacion);
+    }
+    
+ 
+      
+     
+          
+   
+    }
+
+
+

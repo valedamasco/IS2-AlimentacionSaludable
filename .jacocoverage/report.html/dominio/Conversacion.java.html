@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Conversacion.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">Conversacion.java</span></div><h1>Conversacion.java</h1><pre class="source lang-java linenums">package dominio;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Conversacion.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">Conversacion.java</span></div><h1>Conversacion.java</h1><pre class="source lang-java linenums">package dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -17,77 +17,83 @@ public final class Conversacion implements Serializable {
 <span class="fc" id="L17">        setListaMensajes(lista);</span>
 <span class="fc" id="L18">        setFueAtendidaConsulta(false);</span>
 <span class="fc" id="L19">    }</span>
+    
+<span class="nc" id="L21">    public Conversacion(){</span>
+<span class="nc" id="L22">        this.listaMensajes = new ArrayList&lt;InformacionMensaje&gt;();</span>
+<span class="nc" id="L23">        this.usuario = new Persona();</span>
+<span class="nc" id="L24">        this.profesional = new Persona();</span>
+<span class="nc" id="L25">        this.fueAtendidaConsulta = false;</span>
+<span class="nc" id="L26">    }</span>
+    
+<span class="nc" id="L28">    public Conversacion(Persona usuario, Persona profesional){</span>
+<span class="nc" id="L29">        this.listaMensajes = new ArrayList&lt;InformacionMensaje&gt;();</span>
+<span class="nc" id="L30">        this.usuario = usuario;</span>
+<span class="nc" id="L31">        this.profesional = profesional;</span>
+<span class="nc" id="L32">        this.fueAtendidaConsulta = false;</span>
+<span class="nc" id="L33">    }</span>
 
     public boolean getFueAtendidaConsulta() {
-<span class="nc" id="L22">        return fueAtendidaConsulta;</span>
+<span class="nc" id="L36">        return fueAtendidaConsulta;</span>
     }
 
     public void setFueAtendidaConsulta(boolean fueAtendida) {
-<span class="fc" id="L26">        this.fueAtendidaConsulta = fueAtendida;</span>
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L40">        this.fueAtendidaConsulta = fueAtendida;</span>
+<span class="fc" id="L41">    }</span>
 
     public ArrayList&lt;InformacionMensaje&gt; getListaMensajes() {
-<span class="fc" id="L30">        return this.listaMensajes;</span>
+<span class="fc" id="L44">        return this.listaMensajes;</span>
     }
 
     public void setListaMensajes(ArrayList&lt;InformacionMensaje&gt; lista) {
-<span class="pc bpc" id="L34" title="1 of 4 branches missed.">        if (lista == null || lista.isEmpty()) {</span>
-<span class="fc" id="L35">            this.listaMensajes = new ArrayList&lt;&gt;();</span>
+<span class="pc bpc" id="L48" title="1 of 4 branches missed.">        if (lista == null || lista.isEmpty()) {</span>
+<span class="fc" id="L49">            this.listaMensajes = new ArrayList&lt;&gt;();</span>
         } else {
-<span class="nc" id="L37">            this.listaMensajes = lista;</span>
+<span class="fc" id="L51">            this.listaMensajes = lista;</span>
         }
-<span class="fc" id="L39">    }</span>
+<span class="fc" id="L53">    }</span>
 
     public Persona getUsuario() {
-<span class="fc" id="L42">        return usuario;</span>
+<span class="fc" id="L56">        return usuario;</span>
     }
 
     public void setUsuario(Persona unUsuario) {
-<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (unUsuario == null) {</span>
-<span class="fc" id="L47">            this.usuario = new Usuario(null, null, null, null, null, null, null, null);</span>
-        } else {
-<span class="fc" id="L49">            this.usuario = unUsuario;</span>
-        }
-<span class="fc" id="L51">    }</span>
+<span class="fc" id="L60">        this.usuario = unUsuario;</span>
+<span class="fc" id="L61">    }</span>
 
     public Persona getProfesional() {
-<span class="fc" id="L54">        return this.profesional;</span>
+<span class="fc" id="L64">        return this.profesional;</span>
     }
 
     public void setProfesional(Persona unProfesional) {
-<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (unProfesional == null) {</span>
-<span class="fc" id="L59">            this.profesional = new Profesional(null, null, null, null, null, null, null);</span>
-        } else {
-<span class="fc" id="L61">            this.profesional = unProfesional;</span>
-        }
-<span class="fc" id="L63">    }</span>
+<span class="fc" id="L68">        this.profesional = unProfesional;</span>
+<span class="fc" id="L69">    }</span>
 
     public boolean agregarMensaje(String mensaje, boolean intercambioRemitente) {
-<span class="nc" id="L66">        InformacionMensaje informacion = new InformacionMensaje(getUsuario().getNombreCompleto(), getProfesional().getNombreCompleto(), mensaje);</span>
-<span class="nc bnc" id="L67" title="All 2 branches missed.">        if (intercambioRemitente) {</span>
-<span class="nc" id="L68">            informacion.intercambiarRemitente();</span>
+<span class="nc" id="L72">        InformacionMensaje informacion = new InformacionMensaje(getUsuario().getNombreCompleto(), getProfesional().getNombreCompleto(), mensaje);</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">        if (intercambioRemitente) {</span>
+<span class="nc" id="L74">            informacion.intercambiarRemitente();</span>
         }
-<span class="nc" id="L70">        listaMensajes.add(informacion);</span>
-<span class="nc" id="L71">        boolean agregueMensaje = true;</span>
-<span class="nc" id="L72">        return agregueMensaje;</span>
+<span class="nc" id="L76">        listaMensajes.add(informacion);</span>
+<span class="nc" id="L77">        boolean agregueMensaje = true;</span>
+<span class="nc" id="L78">        return agregueMensaje;</span>
     }
 
     @Override
     public boolean equals(Object obj) {
-<span class="nc" id="L77">        final Conversacion conversacionParametro = (Conversacion) obj;</span>
-<span class="nc bnc" id="L78" title="All 2 branches missed.">        return getProfesional().equals(conversacionParametro.getProfesional())</span>
-<span class="nc bnc" id="L79" title="All 2 branches missed.">                &amp;&amp; getUsuario().equals(conversacionParametro.getUsuario());</span>
+<span class="nc" id="L83">        final Conversacion conversacionParametro = (Conversacion) obj;</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">        return getProfesional().equals(conversacionParametro.getProfesional())</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">                &amp;&amp; getUsuario().equals(conversacionParametro.getUsuario());</span>
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L84">        String retorno = &quot;No hay mensajes para mostrar&quot;;</span>
-<span class="pc bpc" id="L85" title="1 of 2 branches missed.">        if (!getListaMensajes().isEmpty()) {</span>
-<span class="nc" id="L86">            retorno = &quot;&quot;;</span>
-<span class="nc" id="L87">            retorno = listaMensajes.stream().map((InformacionMensaje info) -&gt; &quot;\n&quot; + info.getRemitente() + &quot;\n&quot;</span>
-<span class="nc" id="L88">                    + info.getMensaje() + &quot;\n&quot;).reduce(retorno, String::concat);</span>
+<span class="fc" id="L90">        String retorno = &quot;Inicio de conversacion&quot;;</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">        if (!getListaMensajes().isEmpty()) {</span>
+<span class="nc" id="L92">            retorno = &quot;&quot;;</span>
+<span class="nc" id="L93">            retorno = listaMensajes.stream().map((InformacionMensaje info) -&gt; &quot;\n&quot; + info.getRemitente() + &quot;\n&quot;</span>
+<span class="nc" id="L94">                    + info.getMensaje() + &quot;\n&quot;).reduce(retorno, String::concat);</span>
         }
-<span class="fc" id="L90">        return retorno;</span>
+<span class="fc" id="L96">        return retorno;</span>
     }
 
 }
