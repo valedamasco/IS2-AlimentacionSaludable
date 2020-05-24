@@ -6,7 +6,6 @@
 build/
 *.properties
 *.jar
-build/.DS_Store
 *.xml
 javadoc/ 
 .jacocoverage/

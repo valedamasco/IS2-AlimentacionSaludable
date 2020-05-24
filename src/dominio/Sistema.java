@@ -6,9 +6,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.ArrayList;
 
 import java.util.Currency;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 import javax.swing.ImageIcon;
 
 public final class Sistema implements Serializable {
@@ -516,5 +521,17 @@ public final class Sistema implements Serializable {
         } else {
             return new String[0];
         }
+    }
+    
+    public boolean verificarFechas(String fehcaNacimiento, String fechaGraduacion) throws ParseException{
+        boolean verifico = false;
+        if (fehcaNacimiento.contains("/") && fechaGraduacion.contains("/")) {
+            Date dateNacimiento = new SimpleDateFormat("dd/MM/yyyy").parse(fehcaNacimiento);              
+            Date dateGraduacion = new SimpleDateFormat("dd/MM/yyyy").parse(fechaGraduacion);  
+            long diffInMilliSec = dateGraduacion.getTime() - dateNacimiento.getTime();
+            long years =  (diffInMilliSec / (1000l * 60 * 60 * 24 * 365));
+            verifico = years >= 18;
+        }        
+        return verifico;
     }
 }
