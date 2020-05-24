@@ -413,8 +413,8 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
         if (nombre.equals("") || apellido.equals("") || tituloProfesional.equals("Seleccione...") || paisGraduacion.equals("Seleccione...")) {
             this.lblDatosIncorrectos.setVisible(true);
             mostrarErrores(nombre, apellido, tituloProfesional, paisGraduacion);
-        } else try {
-            if(this.getSistema().verificarFechas(fechaNacimiento,fechaGraduacion)) {
+        } else {
+            if (this.getSistema().verificarFechas(this.dateChooserFechaNacimiento, this.dateChooserFechaGraduacion)) {
                 this.lblDatosIncorrectos.setVisible(false);
                 boolean seAgregoProfesional = this.getSistema().crearProfesional(nombre, apellido, fechaNacimiento, this.fotoDePerfilActual, tituloProfesional, fechaGraduacion, paisGraduacion);
                 if (seAgregoProfesional) {
@@ -427,8 +427,6 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
             } else {
                 labelsFechas();
             }
-        } catch (ParseException ex) {
-            Logger.getLogger(VentanaRegistrarProfesional.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnIngresarProfesionalASistemaActionPerformed
 
@@ -601,8 +599,8 @@ public class VentanaRegistrarProfesional extends javax.swing.JDialog {
             this.lblPaisVacio.setVisible(true);
         }
     }
-    
-    private void labelsFechas(){
+
+    private void labelsFechas() {
         this.lblValidarFechaGraduacion.setVisible(true);
         this.lblValidarFechaNacimiento.setVisible(true);
         this.lblNacimientoIncorrecto.setVisible(true);
