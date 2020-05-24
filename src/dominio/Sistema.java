@@ -1,19 +1,14 @@
 package dominio;
 
 
+import datechooser.beans.DateChooserCombo;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.util.ArrayList;
-
-import java.util.Currency;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
+import java.util.Calendar;
 import javax.swing.ImageIcon;
 
 public final class Sistema implements Serializable {
@@ -523,15 +518,12 @@ public final class Sistema implements Serializable {
         }
     }
     
-    public boolean verificarFechas(String fehcaNacimiento, String fechaGraduacion) throws ParseException{
+    public boolean verificarFechas(DateChooserCombo fehcaNacimiento, DateChooserCombo fechaGraduacion){
         boolean verifico = false;
-        if (fehcaNacimiento.contains("/") && fechaGraduacion.contains("/")) {
-            Date dateNacimiento = new SimpleDateFormat("dd/MM/yyyy").parse(fehcaNacimiento);              
-            Date dateGraduacion = new SimpleDateFormat("dd/MM/yyyy").parse(fechaGraduacion);  
-            long diffInMilliSec = dateGraduacion.getTime() - dateNacimiento.getTime();
-            long years =  (diffInMilliSec / (1000l * 60 * 60 * 24 * 365));
-            verifico = years >= 18;
-        }        
+        Calendar fechaNacimiento = fehcaNacimiento.getCurrent();
+        fechaNacimiento.add(Calendar.YEAR, 18);
+        Calendar fechaGruadiacion = fechaGraduacion.getCurrent();
+        verifico = fechaNacimiento.before(fechaGruadiacion);
         return verifico;
     }
 }
