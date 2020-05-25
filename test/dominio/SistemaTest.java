@@ -7,6 +7,7 @@ import dominio.Sistema.Preferencias;
 import dominio.Sistema.Restricciones;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import junit.framework.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -682,8 +683,55 @@ public class SistemaTest {
          assertTrue(fueAgregadaConversacion);
      }
     
-     
+     @Test
+     public void testGetNombresProfesionales () 
+     {
+          Sistema sistemaATestear = new Sistema();
+          Profesional profesionalARegistrar = new Profesional("Yuliana","Gomez", "30/11/1994", null, "Ingeniera en alimentos","30/03/2019", "Uruguay") ;
+          sistemaATestear.agregarProfesionalALaLista(profesionalARegistrar);
+          String[] listaEsperada =  new String[1];
+          listaEsperada[0] = profesionalARegistrar.getNombreCompleto();
+          assertEquals( sistemaATestear.getListaNombresProfesionales()[0], listaEsperada[0]);
+     }
+               
+       
+   
+     @Test
+     public void testGetListaNombresUsuariosConversacionesPendientes ()
+     {
+         Sistema sistemaATestear = new Sistema();
+         Persona persona1 = new Persona ("Joaquin", "Lopez", "", null);
+         Persona persona2 = new Persona ("Yuliana", "Perez", "", null);
+         InformacionMensaje informacion = new InformacionMensaje(persona1.getNombreCompleto(), persona2.getNombreCompleto(), "Hola soy celíaco");
+         ArrayList<InformacionMensaje> listaMensajes = new ArrayList<>();
+         listaMensajes.add(informacion);
+         Conversacion nuevaConversacion = new Conversacion(persona1, persona2, listaMensajes);
+         sistemaATestear.agregarConversacionALaLista(nuevaConversacion);
+          String [] listaObtenida = sistemaATestear.getListaNombresUsuariosConversacionesPendientes(persona2.getNombreCompleto());
+          String [] listaEsperada = new String [1];
+          listaEsperada[0] = persona1.getNombreCompleto();
+          assertEquals(listaObtenida[0] ,listaEsperada[0]);
+     }
+    @Test
+    public void testGetConversacion() 
+    {
+        
+         Sistema sistemaATestear = new Sistema();
+        Usuario usuario = new Usuario("Gonzalo","Figueroa", "5/3/1976",null,"Uruguaya", null, null, null);
+         Profesional profesional = new Profesional ("Lola", "Arocena", "30/11/1994", null, "Ingeniero en Alimentos", "20/3/2019", "Uruguay");
+         InformacionMensaje informacion = new InformacionMensaje(usuario.getNombreCompleto(), profesional.getNombreCompleto(), "Hola soy celíaco");
+         ArrayList<InformacionMensaje> listaMensajes = new ArrayList<>();
+         listaMensajes.add(informacion);
+         Conversacion nuevaConversacion = new Conversacion(usuario, profesional, listaMensajes);
+         nuevaConversacion.setListaMensajes(listaMensajes);
+         sistemaATestear.agregarConversacionALaLista(nuevaConversacion);
+         String conversacionObtenida = sistemaATestear.getConversacion(usuario.getNombreCompleto(), profesional.getNombreCompleto());
+         String conversacionEsperada =  "Hola soy celíaco";
+          assertEquals(conversacionObtenida ,conversacionEsperada);
          
+
+    }
+  
      }
 
      
