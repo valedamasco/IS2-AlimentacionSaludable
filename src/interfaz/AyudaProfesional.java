@@ -40,11 +40,9 @@ public class AyudaProfesional extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
         setLocationByPlatform(true);
-        setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
         setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(600, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 600));
         getContentPane().setLayout(null);
@@ -60,7 +58,7 @@ public class AyudaProfesional extends javax.swing.JDialog {
         lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblNombreUsuario.setText("Ayuda");
         jPanel1.add(lblNombreUsuario);
-        lblNombreUsuario.setBounds(203, 27, 192, 70);
+        lblNombreUsuario.setBounds(203, 27, 192, 66);
 
         btnIngresarAlimentoIngerido.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresarAlimentoIngerido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Message_70px.png"))); // NOI18N
@@ -113,7 +111,7 @@ public class AyudaProfesional extends javax.swing.JDialog {
         jScrollPane15.setViewportView(textDesayuno3);
 
         jPanel1.add(jScrollPane15);
-        jScrollPane15.setBounds(220, 310, 315, 56);
+        jScrollPane15.setBounds(220, 310, 315, 50);
 
         textDesayuno4.setEditable(false);
         textDesayuno4.setBackground(new java.awt.Color(51, 51, 51));
@@ -124,7 +122,7 @@ public class AyudaProfesional extends javax.swing.JDialog {
         jScrollPane16.setViewportView(textDesayuno4);
 
         jPanel1.add(jScrollPane16);
-        jScrollPane16.setBounds(220, 450, 315, 81);
+        jScrollPane16.setBounds(220, 450, 315, 73);
 
         textDesayuno5.setEditable(false);
         textDesayuno5.setBackground(new java.awt.Color(51, 51, 51));
@@ -135,7 +133,7 @@ public class AyudaProfesional extends javax.swing.JDialog {
         jScrollPane17.setViewportView(textDesayuno5);
 
         jPanel1.add(jScrollPane17);
-        jScrollPane17.setBounds(220, 170, 315, 81);
+        jScrollPane17.setBounds(220, 170, 315, 73);
 
         btnCerrarAyuda.setBackground(new java.awt.Color(51, 51, 51));
         btnCerrarAyuda.setForeground(new java.awt.Color(51, 51, 51));
