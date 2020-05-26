@@ -45,7 +45,7 @@ public class ConversacionTest {
     public void testGetSetsNullToString() {
         ArrayList listaMensajes = new ArrayList();
         Conversacion conversacionATestear = new Conversacion(this.personaUsuario, this.personaProfesional, listaMensajes);
-        assertEquals(conversacionATestear.toString(), "No hay mensajes para mostrar");
+        assertEquals(conversacionATestear.toString(), "Inicio de conversacion");
     }
 
 
@@ -74,7 +74,7 @@ public class ConversacionTest {
         Persona profesional = new Profesional(this.personaProfesional);
         ArrayList listaMensajes = new ArrayList<>();
         Conversacion conversacionATestear = new Conversacion(usuario, profesional, listaMensajes);
-        assertEquals(conversacionATestear.toString(), "No hay mensajes para mostrar");
+        assertEquals(conversacionATestear.toString(), "Inicio de conversacion");
     }
 
 
