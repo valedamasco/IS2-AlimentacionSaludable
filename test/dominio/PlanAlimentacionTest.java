@@ -12,14 +12,10 @@ public class PlanAlimentacionTest {
 
     @Test
     public void testGetsSetsNullToString() {
-        String nombrePlan = null;
         Usuario usuario = null;
         Profesional profesional = null;
-        boolean fueAtendido = false;
-        String[][] planDiaADia = null;
-        PlanAlimentacion planATestear = new PlanAlimentacion(nombrePlan, usuario, profesional,
-                fueAtendido, planDiaADia);
-        assertEquals(planATestear.toString(), "Plan de alimentación");
+        PlanAlimentacion planATestear = new PlanAlimentacion(usuario, profesional);
+        assertEquals(planATestear.toString(), "");
     }
 
     @Test
@@ -31,33 +27,30 @@ public class PlanAlimentacionTest {
         String[][] planDiaADia = new String[0][0];
         PlanAlimentacion planATestear = new PlanAlimentacion(nombrePlan, usuario, profesional,
                 fueAtendido, planDiaADia);
-        assertEquals(planATestear.getNombreDelPlan(), "Plan de alimentación");
+        assertEquals(planATestear.getNombreDelPlan(), "");
     }
 
     @Test
     public void testGetsSetsDatosVaciosUsuario() {
         String nombrePlan = "";
-        Usuario usuario = new Usuario(null, null, null, null, null, null, null, null);
-        Profesional profesional = new Profesional(null, null, null, null, null, null, null);
-        boolean fueAtendido = true;
-        String[][] planDiaADia = new String[0][0];
-        PlanAlimentacion planATestear = new PlanAlimentacion(nombrePlan, usuario, profesional,
-                fueAtendido, planDiaADia);
-        Usuario usuarioEsperado = new Usuario("", "", null, null, null, null, null, null);
-        assertEquals(planATestear.getUsuario(), usuarioEsperado);
+        Persona persona = new Persona();
+        Usuario usuario = new Usuario(persona);
+        Profesional profesional = new Profesional(persona);
+        PlanAlimentacion planATestear = new PlanAlimentacion(usuario, profesional);
+        assertEquals(planATestear.getUsuario().getNombreCompleto(), usuario.getNombreCompleto());
     }
 
     @Test
     public void testGetsSetsDatosVaciosProfesional() {
         String nombrePlan = "";
-        Usuario usuario = new Usuario(null, null, null, null, null, null, null, null);
-        Profesional profesional = new Profesional(null, null, null, null, null, null, null);
+        Persona personaUsuario = new Persona();
+        Persona personaProfesional = new Persona();
+        Usuario usuario = new Usuario(personaUsuario);
+        Profesional profesional = new Profesional(personaProfesional);
         boolean fueAtendido = true;
         String[][] planDiaADia = new String[0][0];
-        PlanAlimentacion planATestear = new PlanAlimentacion(nombrePlan, usuario, profesional,
-                fueAtendido, planDiaADia);
-        Profesional profesionalEsperado = new Profesional("", "", null, null, null, null, null);
-        assertEquals(planATestear.getProfesional(), profesionalEsperado);
+        PlanAlimentacion planATestear = new PlanAlimentacion(usuario, profesional);
+        assertEquals(planATestear.getProfesional().getNombreCompleto(), profesional.getNombreCompleto());
     }
 
     @Test
@@ -88,13 +81,11 @@ public class PlanAlimentacionTest {
     @Test
     public void testGetsSetsDatosVaciosToString() {
         String nombrePlan = "";
-        Usuario usuario = new Usuario(null, null, null, null, null, null, null, null);
-        Profesional profesional = new Profesional(null, null, null, null, null, null, null);
-        boolean fueAtendido = true;
-        String[][] planDiaADia = new String[0][0];
-        PlanAlimentacion planATestear = new PlanAlimentacion(nombrePlan, usuario, profesional,
-                fueAtendido, planDiaADia);
-        assertEquals(planATestear.toString(), "Plan de alimentación");
+        Persona persona = new Persona();
+        Usuario usuario = new Usuario(persona);
+        Profesional profesional = new Profesional(persona);
+        PlanAlimentacion planATestear = new PlanAlimentacion(usuario, profesional);
+        assertEquals(planATestear.toString(), "");
     }
 
     @Test
