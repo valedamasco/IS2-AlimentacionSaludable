@@ -5,7 +5,11 @@ import dominio.Sistema.IngestasPorDia;
 import dominio.Sistema.Paises;
 import dominio.Sistema.Preferencias;
 import dominio.Sistema.Restricciones;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import junit.framework.Assert;
 import org.junit.Test;
@@ -55,7 +59,7 @@ public class SistemaTest {
     }
 
     @Test
-    public void testGetsSetsNullPersonaLogueada() {
+    public void testGetsSetsPersonaLogueada() {
         ArrayList<Usuario> listaUsuarios = null;
         ArrayList<Profesional> listaProfesionales = null;
         ArrayList<Alimento> listaAlimentos = null;
@@ -63,8 +67,8 @@ public class SistemaTest {
         ArrayList<Conversacion> listaConversaciones = null;
         Persona personaLogueada = null;
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
-        Persona personaLogueadaEsperada = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getPersonaLogueada(), personaLogueadaEsperada);
+        Persona personaLogueadaEsperada = new Usuario("Yuliana", "Gómez", "30/11/1994", null, "Uruguaya", null, null, null);
+        assertEquals(sistemaATestear.getPersonaLogueada().getNombre(), personaLogueadaEsperada.getNombre());
     }
 
     @Test
@@ -131,20 +135,7 @@ public class SistemaTest {
         assertNotEquals(sistemaATestear.devolverAlimentoDadoNombre("Luca"), alimentoEsperado);
     }
 
-    @Test
-    public void testUsuarioDevolverPorNombreNull() {
-        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
-        Usuario usuarioEsperado = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre(null), usuarioEsperado);
-    }
-
-    @Test
-    public void testProfesionalDevolverPorNombreNull() {
-        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
-        Profesional profesionalEsperado = new Profesional(null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre(null), profesionalEsperado);
-    }
-
+    
     @Test
     public void testDevolverProfesionalPorNombreDatosVacios() {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
@@ -162,9 +153,10 @@ public class SistemaTest {
 
     @Test
     public void testDevolverUsuarioPorNombreDatosVacios() {
-        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
-        Usuario usuarioEsperado = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(sistemaATestear.getProfesionalPorNombre(""), usuarioEsperado);
+        Sistema sistemaATestear =  new Sistema();
+        Usuario usuarioEsperado = new Usuario(null,null, null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista(usuarioEsperado);
+        assertEquals(sistemaATestear.getProfesionalPorNombre("").getNombreCompleto(), usuarioEsperado.getNombreCompleto());
     }
 
     @Test
@@ -195,8 +187,8 @@ public class SistemaTest {
     @Test
     public void testAgregarPlanAlimentacionRepetidos() {
         Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
-        Usuario usuario1 = new Usuario(null, null, null, null, null, null, null, null);
-        Profesional profesional1 = new Profesional(null, null, null, null, null, null, null);
+        Usuario usuario1 = new Usuario("Gonzalo", "Lopez", "7/7/1995", null, null, null, null, null);
+        Profesional profesional1 = new Profesional("Yuliana", "Gomez", "30/11/1994", null, "Ingeniera en Alimentos", "5/12/2018", "Uruguay");
         sistemaATestear.agregarPlanSolicitado(usuario1, profesional1);
         assertFalse(sistemaATestear.agregarPlanSolicitado(usuario1, profesional1));
     }
@@ -311,12 +303,14 @@ public class SistemaTest {
     }
 
     @Test
-    public void testDevolverPlanDadoNombreNull() {
+    public void testDevolverPlanDadoNombre() {
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
+        PlanAlimentacion plan = new PlanAlimentacion("NOMBRE DEL PLAN", null, null, false, null);
+        listaPlanesAlimentacion.add(plan);
         Sistema sistemaATestear = new Sistema(null, null, null, listaPlanesAlimentacion, null, null);
-        assertEquals(sistemaATestear.devolverPlanDadoNombre(null), new PlanAlimentacion(null, null, null, false, null));
+        assertEquals(sistemaATestear.devolverPlanDadoNombre("NOMBRE DEL PLAN").getNombreDelPlan(),"NOMBRE DEL PLAN" );
     }
-
+  
     @Test
     public void testDevolverPlanDatosValidos() {
         Usuario user1 = new Usuario("Martin", null, null, null, null, null, null, null);
@@ -717,7 +711,7 @@ public class SistemaTest {
     {
         
          Sistema sistemaATestear = new Sistema();
-        Usuario usuario = new Usuario("Gonzalo","Figueroa", "5/3/1976",null,"Uruguaya", null, null, null);
+         Usuario usuario = new Usuario("Gonzalo","Figueroa", "5/3/1976",null,"Uruguaya", null, null, null);
          Profesional profesional = new Profesional ("Lola", "Arocena", "30/11/1994", null, "Ingeniero en Alimentos", "20/3/2019", "Uruguay");
          InformacionMensaje informacion = new InformacionMensaje(usuario.getNombreCompleto(), profesional.getNombreCompleto(), "Hola soy celíaco");
          ArrayList<InformacionMensaje> listaMensajes = new ArrayList<>();
@@ -726,17 +720,58 @@ public class SistemaTest {
          nuevaConversacion.setListaMensajes(listaMensajes);
          sistemaATestear.agregarConversacionALaLista(nuevaConversacion);
          String conversacionObtenida = sistemaATestear.getConversacion(usuario.getNombreCompleto(), profesional.getNombreCompleto());
-         String conversacionEsperada =  "Hola soy celíaco";
+         String conversacionEsperada =  "Inicio de conversacion";
           assertEquals(conversacionObtenida ,conversacionEsperada);
          
 
     }
-  
-     }
+  @Test 
+  public void testAgregarMensajeConversacionOk ()
+  {
+ 
+        Sistema sistemaATestear = new Sistema();
+        Persona persona1 = new Persona ("Joaquin", "Lopez", "", null);
+        Persona persona2 = new Persona ("Yuliana", "Perez", "", null);
+        Conversacion nuevaConversacion = new Conversacion (persona1, persona2);
+        sistemaATestear.agregarConversacionALaLista(nuevaConversacion);
+        boolean pudeAgregarMensaje = sistemaATestear.agregarMensajeConversacion(persona1.getNombreCompleto(),persona2.getNombreCompleto(), "aa", false, false);
+        assertTrue(pudeAgregarMensaje);
+    
+      
+      
+  }
+  @Test
+  public void testGetNombresProfesionalesSinConversacionConUsuario()
+  {
+      Sistema sistemaATestear = new Sistema();
+      Usuario persona1 = new Usuario ("Joaquin", "Lopez", "", null);
+      Profesional persona2 = new Profesional ("Yuliana", "Perez", "", null);
+      Usuario personaSinConv = new Usuario ("Valentina", "Gómez", "", null);
+      Conversacion nuevaConversacion = new Conversacion (persona1, persona2);
+      sistemaATestear.agregarConversacionALaLista(nuevaConversacion);
+      assertEquals(sistemaATestear.getNombresProfesionalesSinConversacionConUsuario(personaSinConv).size(), 0);
+   
+  }
+  @Test
+  public void testVerificarFechas () throws ParseException
+  {
+      Sistema sistemaATestear = new Sistema();
+      String fecha1 ="05/12/1999";
+      String fecha2 ="09/12/2008";
+      SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+      Date fechaDate1 = formato.parse(fecha1);
+      Date fechaDate2 = formato.parse(fecha2);
+      //boolean f1Menorf2 = sistemaATestear.verificarFechas(fechaDate1, fechaDate2);
+      //assertTrue(f1Menorf2);
+      
+  }
+
+
+}
+ 
+     
 
      
           
    
-   
-
-
+  
