@@ -1,19 +1,21 @@
 package dominio;
 
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
-import java.util.Objects;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class IngestaTest {
-
+	
     @Test
     public void testGetsSetsDatosValidosListaAlimentos() {
         String fechaDeIngesta = "11/02/17";
-        ArrayList<ComposicionAlimento> listaComposicion = new ArrayList<>();
+        ArrayList <ComposicionAlimento> listaComposicion = new ArrayList<>();
         listaComposicion.add(new ComposicionAlimento("Lipidos", 2));
         Alimento alimento1 = new Alimento("Papa", "Verdura", listaComposicion, null);
-        ArrayList<Alimento> listaAlimentosPorFecha = new ArrayList<>();
+        ArrayList <Alimento> listaAlimentosPorFecha = new ArrayList<>();
         listaAlimentosPorFecha.add(alimento1);
         Ingesta ingestaATestear = new Ingesta(fechaDeIngesta, listaAlimentosPorFecha);
         assertEquals(ingestaATestear.getListaAlimentosPorFecha(), listaAlimentosPorFecha);

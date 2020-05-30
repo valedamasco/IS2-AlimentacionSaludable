@@ -1,8 +1,7 @@
 package dominio;
 
 import java.io.Serializable;
-import java.util.Objects;
-import java.util.Currency;
+
 
 public final class PlanAlimentacion implements Serializable {
 

@@ -5,7 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class ProfesionalTest {
-
+	
+	  
     @Test
     public void testGetsSetsDatosCorrectosGraduacion() {
         String nombre = "Martin";
@@ -70,7 +71,7 @@ public class ProfesionalTest {
         String toStringEperado = "";
         assertEquals(prof.toString(), toStringEperado);
     }
-
+    @Test
     public void testToStringDatosVacios() {
         String nombre = "";
         String apellido = "";

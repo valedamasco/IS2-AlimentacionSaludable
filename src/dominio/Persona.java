@@ -1,6 +1,6 @@
 package dominio;
 
-import java.util.Objects;
+
 import java.io.Serializable;
 import javax.swing.ImageIcon;
 
@@ -75,8 +75,6 @@ public class Persona implements Serializable {
 
     public String getNombreCompleto() {
         String retorno;
-        String nombre = this.getNombre();
-        String apellido = this.getApellido();
         if (getNombre().equals("Nombre no ingresado") && getApellido().equals("Apellido no ingresado")) {
             retorno = "Nombre no ingresado";
         } else if (getNombre().equals("Nombre no ingresado")) {

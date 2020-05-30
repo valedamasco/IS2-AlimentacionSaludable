@@ -1,26 +1,20 @@
 package dominio;
 
+import org.junit.Test;
 import datechooser.beans.DateChooserCombo;
 import dominio.Sistema.DiasDeLaSemana;
 import dominio.Sistema.IngestasPorDia;
-import dominio.Sistema.Paises;
 import dominio.Sistema.Preferencias;
 import dominio.Sistema.Restricciones;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import javax.swing.ImageIcon;
-import junit.framework.Assert;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class SistemaTest {
 
-    public SistemaTest() {
-
-    }
 
 
     @Test
@@ -120,7 +114,7 @@ public class SistemaTest {
 
     @Test
     public void testDevolverAlimentoDatosCorrectos() {
-        ArrayList listaAlimentos = new ArrayList<>();
+    	 ArrayList <Alimento> listaAlimentos = new ArrayList<>();
         Alimento alimentoEsperado = new Alimento("Papa", "Verdura", null, null);
         listaAlimentos.add(alimentoEsperado);
         Sistema sistemaATestear = new Sistema(null, null, listaAlimentos, null, null, null);
@@ -129,7 +123,7 @@ public class SistemaTest {
 
     @Test
     public void testDevolverAlimentoDatosErroneos() {
-        ArrayList listaAlimentos = new ArrayList<>();
+        ArrayList <Alimento> listaAlimentos = new ArrayList<>();
         Alimento alimentoEsperado = new Alimento("Papa", "Verdura", null, null);
         listaAlimentos.add(alimentoEsperado);
         Sistema sistemaATestear = new Sistema(null, null, listaAlimentos, null, null, null);
@@ -165,8 +159,6 @@ public class SistemaTest {
         Sistema sistemaATestear = new Sistema();
         Persona personaUsuario = new Persona(null,null,null,null);
         Profesional profesional = new Profesional(personaUsuario);
-        String nombre = profesional.getNombre();
-        String apellido = profesional.getApellido();
         sistemaATestear.agregarProfesionalALaLista(profesional);
         Profesional usuario2 = new Profesional(personaUsuario);
         assertEquals(sistemaATestear.getProfesionalPorNombre("Martin"), usuario2);
@@ -633,7 +625,6 @@ public class SistemaTest {
   @Test
     public void testAgregarProfesionalnoExistenteALista() {
         Sistema sistemaATestear = new Sistema();
-        ArrayList<String> listaProfesionales = null;
         Persona persona = new Persona ("Yuliana", "Perez", "", null);
         Profesional nuevoProfesional = new Profesional (persona);
         boolean pudeAgregarProfesional= sistemaATestear.agregarProfesionalALaLista(nuevoProfesional);
@@ -643,7 +634,7 @@ public class SistemaTest {
       @Test
     public void testAgregarProfesionalExistenteALista() {
          Sistema sistemaATestear = new Sistema();
-         ArrayList listaProfesionales = new ArrayList<>();
+         ArrayList <Profesional> listaProfesionales = new ArrayList<>();
          Profesional profesionalexistente = new Profesional("Yuliana", "Perez","", null);
          listaProfesionales.add(profesionalexistente);
          sistemaATestear.setListaProfesionales(listaProfesionales);
