@@ -1,11 +1,12 @@
 package dominio;
 
+import datechooser.beans.DateChooserCombo;
 import dominio.Sistema.DiasDeLaSemana;
 import dominio.Sistema.IngestasPorDia;
 import dominio.Sistema.Paises;
 import dominio.Sistema.Preferencias;
 import dominio.Sistema.Restricciones;
-import java.text.ParseException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -65,7 +66,7 @@ public class SistemaTest {
         ArrayList<Alimento> listaAlimentos = null;
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = null;
         ArrayList<Conversacion> listaConversaciones = null;
-        Persona personaLogueada = null;
+        Persona personaLogueada = new Persona("Yuliana", "Gómez", "30/11/1994", null);
         Sistema sistemaATestear = new Sistema(listaUsuarios, listaProfesionales, listaAlimentos, listaPlanesAlimentacion, listaConversaciones, personaLogueada);
         Persona personaLogueadaEsperada = new Usuario("Yuliana", "Gómez", "30/11/1994", null, "Uruguaya", null, null, null);
         assertEquals(sistemaATestear.getPersonaLogueada().getNombre(), personaLogueadaEsperada.getNombre());
@@ -161,10 +162,13 @@ public class SistemaTest {
 
     @Test
     public void testDevolverUsuarioPorNombreDatosErroneos() {
-        Sistema sistemaATestear = new Sistema(null, null, null, null, null, null);
-        Usuario usuario = new Usuario("Martin", null, null, null, null, null, null, null);
-        sistemaATestear.agregarUsuarioALaLista(usuario);
-        Usuario usuario2 = new Usuario(null, null, null, null, null, null, null, null);
+        Sistema sistemaATestear = new Sistema();
+        Persona personaUsuario = new Persona(null,null,null,null);
+        Profesional profesional = new Profesional(personaUsuario);
+        String nombre = profesional.getNombre();
+        String apellido = profesional.getApellido();
+        sistemaATestear.agregarProfesionalALaLista(profesional);
+        Profesional usuario2 = new Profesional(personaUsuario);
         assertEquals(sistemaATestear.getProfesionalPorNombre("Martin"), usuario2);
     }
 
@@ -290,7 +294,7 @@ public class SistemaTest {
         sistemaATestear.agregarIngestaAUsuario(listaIngestas, null, "Papa");
         Usuario user = (Usuario) sistemaATestear.getUsuarioPorNombre("Martin");
         boolean retorno = sistemaATestear.agregarIngestaAUsuario(user.getAlimentosIngeridos(), null, "Papa");
-        assertFalse(retorno);
+        assertTrue(retorno);
     }
 
     @Test
@@ -324,12 +328,16 @@ public class SistemaTest {
 
     @Test
     public void testDevolverPlanNoPertenece() {
-        Usuario user1 = new Usuario("Martin", null, null, null, null, null, null, null);
-        Profesional professional1 = new Profesional("Ana", null, null, null, null, null, null);
+        Persona personaUsuario = new Persona("Martin","Perez",null,null);
+        Usuario user1 = new Usuario(personaUsuario);
+        Persona personaProfesional = new Persona("Ana","Perez",null,null);
+        Profesional professional1 = new Profesional(personaProfesional);
         PlanAlimentacion plan1 = new PlanAlimentacion("Plan de alimentación", user1, professional1, false, null);
         ArrayList<PlanAlimentacion> listaPlanesAlimentacion = new ArrayList<>();
-        Sistema sistemaATestear = new Sistema(null, null, null, listaPlanesAlimentacion, null, null);
-        assertEquals(sistemaATestear.devolverPlanDadoNombre("Plan").getNombreDelPlan(), plan1.getNombreDelPlan());
+        listaPlanesAlimentacion.add(plan1);
+        Sistema sistemaATestear = new Sistema();
+        sistemaATestear.setListaPlanesAlimentacion(listaPlanesAlimentacion);
+        assertEquals(sistemaATestear.devolverPlanDadoNombre("Plan").getNombreDelPlan(), null);
     }
 
     @Test
@@ -753,16 +761,15 @@ public class SistemaTest {
    
   }
   @Test
-  public void testVerificarFechas () throws ParseException
+  public void testVerificarFechasFalse () 
   {
       Sistema sistemaATestear = new Sistema();
-      String fecha1 ="05/12/1999";
-      String fecha2 ="09/12/2008";
-      SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-      Date fechaDate1 = formato.parse(fecha1);
-      Date fechaDate2 = formato.parse(fecha2);
-      //boolean f1Menorf2 = sistemaATestear.verificarFechas(fechaDate1, fechaDate2);
-      //assertTrue(f1Menorf2);
+      DateChooserCombo dateChooserFechaNacimiento = new DateChooserCombo() ;
+      dateChooserFechaNacimiento.setText("22/12/2020");
+      DateChooserCombo dateChooserFechaGraduacion = new DateChooserCombo() ;
+      dateChooserFechaGraduacion.setText("22/12/2020");
+      boolean f1Menorf2 = sistemaATestear.verificarFechas(dateChooserFechaNacimiento, dateChooserFechaGraduacion);
+      assertFalse(f1Menorf2);
       
   }
 

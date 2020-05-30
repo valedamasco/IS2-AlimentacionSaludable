@@ -30,7 +30,11 @@ public class Persona implements Serializable {
     }
 
     public void setNombre(String unNombre) {
-        this.nombre = unNombre;
+        if (unNombre == null || unNombre.isEmpty()) {
+            this.nombre = "Nombre no ingresado";
+        } else {
+            this.nombre = unNombre;
+        }
     }
 
     public String getApellido() {
@@ -71,6 +75,8 @@ public class Persona implements Serializable {
 
     public String getNombreCompleto() {
         String retorno;
+        String nombre = this.getNombre();
+        String apellido = this.getApellido();
         if (getNombre().equals("Nombre no ingresado") && getApellido().equals("Apellido no ingresado")) {
             retorno = "Nombre no ingresado";
         } else if (getNombre().equals("Nombre no ingresado")) {

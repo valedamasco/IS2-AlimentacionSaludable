@@ -369,8 +369,7 @@ public final class Sistema implements Serializable {
 
     public boolean agregarIngestaAUsuario(ArrayList<Ingesta> listaIngestasDelUsuario, String fechaIngesta, String nuevoAlimento) {
         boolean ingestaAgregada = false;
-        if (listaIngestasDelUsuario != null) {
-            
+        if (listaIngestasDelUsuario != null) {            
                 if (yaExisteIngestaEnEsaFecha(listaIngestasDelUsuario, fechaIngesta)) {
                     for (int i = 0; i < listaIngestasDelUsuario.size(); i++) {
                         if (listaIngestasDelUsuario.get(i).getFechaDeIngesta().equals(fechaIngesta)) {
@@ -396,7 +395,8 @@ public final class Sistema implements Serializable {
         boolean existe = false;
         if (listaIngestasDelUsuario != null) {
             for (int i = 0; i < listaIngestasDelUsuario.size(); i++) {
-                if (listaIngestasDelUsuario.get(i).getFechaDeIngesta().equals(fechaIngesta)) {
+                if (listaIngestasDelUsuario.get(i).getFechaDeIngesta()!= null
+                        && listaIngestasDelUsuario.get(i).getFechaDeIngesta().equals(fechaIngesta)) {
                     existe = true;
                 }
             }
