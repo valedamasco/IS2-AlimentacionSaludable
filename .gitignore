@@ -8,6 +8,7 @@ build/
 *.jar
 *.xml
 javadoc/ 
+.jacocoverage/
 
 
 # User-specific files
