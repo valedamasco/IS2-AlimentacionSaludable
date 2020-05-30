@@ -7,6 +7,7 @@ import org.junit.Test;
 
 public class AlimentoTest {
 
+	  
     @Test
     public void testSetsGetsNullTipo() {
         Alimento alimentoTest = new Alimento();

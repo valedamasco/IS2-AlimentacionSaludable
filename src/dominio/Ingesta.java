@@ -2,8 +2,7 @@ package dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Arrays;
+
 
 public final class Ingesta implements Serializable {
 

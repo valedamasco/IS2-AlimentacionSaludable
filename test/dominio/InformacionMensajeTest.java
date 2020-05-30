@@ -1,10 +1,15 @@
 package dominio;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
+
 
 public class InformacionMensajeTest {
+	
+	public InformacionMensajeTest() {
 
+    }
     @Test
     public void testGetsSetsNullRemitente() {
         InformacionMensaje info = new InformacionMensaje();

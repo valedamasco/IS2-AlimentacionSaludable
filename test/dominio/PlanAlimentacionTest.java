@@ -1,15 +1,17 @@
 package dominio;
 
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
 import javax.swing.ImageIcon;
 import org.junit.Assert;
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+
 
 public class PlanAlimentacionTest {
 
-    public PlanAlimentacionTest() {
-    }
-
+  
     @Test
     public void testGetsSetsNullToString() {
         Usuario usuario = null;
@@ -32,7 +34,6 @@ public class PlanAlimentacionTest {
 
     @Test
     public void testGetsSetsDatosVaciosUsuario() {
-        String nombrePlan = "";
         Persona persona = new Persona();
         Usuario usuario = new Usuario(persona);
         Profesional profesional = new Profesional(persona);
@@ -42,7 +43,7 @@ public class PlanAlimentacionTest {
 
     @Test
     public void testGetsSetsDatosVaciosProfesional() {
-        String nombrePlan = "";
+ 
         Persona personaUsuario = new Persona();
         Persona personaProfesional = new Persona();
         Usuario usuario = new Usuario(personaUsuario);
@@ -80,7 +81,7 @@ public class PlanAlimentacionTest {
 
     @Test
     public void testGetsSetsDatosVaciosToString() {
-        String nombrePlan = "";
+        
         Persona persona = new Persona();
         Usuario usuario = new Usuario(persona);
         Profesional profesional = new Profesional(persona);
