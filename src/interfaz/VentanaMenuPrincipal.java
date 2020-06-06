@@ -4,6 +4,7 @@ import dominio.Persona;
 import dominio.Sistema;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JRootPane;
 
 public class VentanaMenuPrincipal extends javax.swing.JDialog {
 
@@ -19,6 +20,8 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         this.lblRegistrados.setVisible(false);
         this.lblRegistrados1.setVisible(false);
         checkListEmpty();
+        this.setDefaultLookAndFeelDecorated(true);
+        this.getRootPane().setWindowDecorationStyle(JRootPane.FRAME);
     }
 
     public Image getIconImage() {
@@ -53,7 +56,6 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         btnAgregarProfesional = new javax.swing.JLabel();
         lblNombre1 = new javax.swing.JLabel();
         btnAgregarProfesional1 = new javax.swing.JLabel();
-        btnCerrarSistema = new javax.swing.JButton();
         lblNoHayUsuarios = new javax.swing.JLabel();
         lblNoHayProfesionales = new javax.swing.JLabel();
         lblRegistrados = new javax.swing.JLabel();
@@ -124,7 +126,7 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setText("Profesional");
         panel2.add(lblNombre);
-        lblNombre.setBounds(450, 200, 181, 36);
+        lblNombre.setBounds(450, 200, 181, 38);
 
         listaUsuariosVentana.setBackground(new java.awt.Color(51, 51, 51));
         listaUsuariosVentana.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -175,7 +177,7 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         lblNombre1.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre1.setText("Usuario");
         panel2.add(lblNombre1);
-        lblNombre1.setBounds(130, 200, 181, 36);
+        lblNombre1.setBounds(130, 200, 181, 38);
 
         btnAgregarProfesional1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarProfesional.png"))); // NOI18N
         btnAgregarProfesional1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -186,43 +188,29 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         panel2.add(btnAgregarProfesional1);
         btnAgregarProfesional1.setBounds(510, 600, 100, 90);
 
-        btnCerrarSistema.setBackground(new java.awt.Color(51, 51, 51));
-        btnCerrarSistema.setForeground(new java.awt.Color(51, 51, 51));
-        btnCerrarSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Close_Window_48px.png"))); // NOI18N
-        btnCerrarSistema.setBorderPainted(false);
-        btnCerrarSistema.setContentAreaFilled(false);
-        btnCerrarSistema.setFocusPainted(false);
-        btnCerrarSistema.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarSistemaActionPerformed(evt);
-            }
-        });
-        panel2.add(btnCerrarSistema);
-        btnCerrarSistema.setBounds(730, 10, 50, 50);
-
         lblNoHayUsuarios.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblNoHayUsuarios.setForeground(new java.awt.Color(255, 51, 51));
         lblNoHayUsuarios.setText("No hay usuarios");
         panel2.add(lblNoHayUsuarios);
-        lblNoHayUsuarios.setBounds(80, 360, 300, 36);
+        lblNoHayUsuarios.setBounds(80, 360, 300, 38);
 
         lblNoHayProfesionales.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblNoHayProfesionales.setForeground(new java.awt.Color(255, 51, 51));
         lblNoHayProfesionales.setText("No hay profesionales");
         panel2.add(lblNoHayProfesionales);
-        lblNoHayProfesionales.setBounds(400, 360, 340, 36);
+        lblNoHayProfesionales.setBounds(400, 360, 340, 38);
 
         lblRegistrados.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblRegistrados.setForeground(new java.awt.Color(255, 51, 51));
         lblRegistrados.setText("registrados");
         panel2.add(lblRegistrados);
-        lblRegistrados.setBounds(450, 430, 181, 36);
+        lblRegistrados.setBounds(450, 430, 181, 38);
 
         lblRegistrados1.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblRegistrados1.setForeground(new java.awt.Color(255, 51, 51));
         lblRegistrados1.setText("registrados");
         panel2.add(lblRegistrados1);
-        lblRegistrados1.setBounds(100, 430, 181, 36);
+        lblRegistrados1.setBounds(100, 430, 181, 38);
 
         getContentPane().add(panel2);
         panel2.setBounds(275, 0, 950, 800);
@@ -267,11 +255,6 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
         ventanaRegProfesional.setVisible(true);
     }//GEN-LAST:event_btnAgregarProfesional1MouseClicked
 
-    private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
-        this.sistema.guardarDatosSistema();
-        this.dispose();
-    }//GEN-LAST:event_btnCerrarSistemaActionPerformed
-
     
     private void checkListEmpty() {
         if (sistema.getListaUsuarios().isEmpty()){
@@ -304,7 +287,6 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
     private javax.swing.JLabel btnAgregarProfesional;
     private javax.swing.JLabel btnAgregarProfesional1;
     private javax.swing.JLabel btnAgregarUsuario;
-    private javax.swing.JButton btnCerrarSistema;
     private javax.swing.JLabel icono;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
