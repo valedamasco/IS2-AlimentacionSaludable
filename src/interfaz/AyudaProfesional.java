@@ -35,7 +35,6 @@ public class AyudaProfesional extends javax.swing.JDialog {
         textDesayuno4 = new javax.swing.JTextArea();
         jScrollPane17 = new javax.swing.JScrollPane();
         textDesayuno5 = new javax.swing.JTextArea();
-        btnCerrarAyuda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -58,7 +57,7 @@ public class AyudaProfesional extends javax.swing.JDialog {
         lblNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblNombreUsuario.setText("Ayuda");
         jPanel1.add(lblNombreUsuario);
-        lblNombreUsuario.setBounds(203, 27, 192, 66);
+        lblNombreUsuario.setBounds(203, 27, 192, 78);
 
         btnIngresarAlimentoIngerido.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresarAlimentoIngerido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Message_70px.png"))); // NOI18N
@@ -111,7 +110,7 @@ public class AyudaProfesional extends javax.swing.JDialog {
         jScrollPane15.setViewportView(textDesayuno3);
 
         jPanel1.add(jScrollPane15);
-        jScrollPane15.setBounds(220, 310, 315, 50);
+        jScrollPane15.setBounds(220, 310, 315, 56);
 
         textDesayuno4.setEditable(false);
         textDesayuno4.setBackground(new java.awt.Color(51, 51, 51));
@@ -122,7 +121,7 @@ public class AyudaProfesional extends javax.swing.JDialog {
         jScrollPane16.setViewportView(textDesayuno4);
 
         jPanel1.add(jScrollPane16);
-        jScrollPane16.setBounds(220, 450, 315, 73);
+        jScrollPane16.setBounds(220, 450, 315, 81);
 
         textDesayuno5.setEditable(false);
         textDesayuno5.setBackground(new java.awt.Color(51, 51, 51));
@@ -133,21 +132,7 @@ public class AyudaProfesional extends javax.swing.JDialog {
         jScrollPane17.setViewportView(textDesayuno5);
 
         jPanel1.add(jScrollPane17);
-        jScrollPane17.setBounds(220, 170, 315, 73);
-
-        btnCerrarAyuda.setBackground(new java.awt.Color(51, 51, 51));
-        btnCerrarAyuda.setForeground(new java.awt.Color(51, 51, 51));
-        btnCerrarAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Close_Window_48px.png"))); // NOI18N
-        btnCerrarAyuda.setBorderPainted(false);
-        btnCerrarAyuda.setContentAreaFilled(false);
-        btnCerrarAyuda.setFocusPainted(false);
-        btnCerrarAyuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarAyudaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnCerrarAyuda);
-        btnCerrarAyuda.setBounds(540, 10, 50, 50);
+        jScrollPane17.setBounds(220, 170, 315, 81);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 600, 600);
@@ -167,13 +152,8 @@ public class AyudaProfesional extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnIngresarAlimentoIngerido2ActionPerformed
 
-    private void btnCerrarAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarAyudaActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btnCerrarAyudaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCerrarAyuda;
     private javax.swing.JButton btnIngresarAlimentoIngerido;
     private javax.swing.JButton btnIngresarAlimentoIngerido1;
     private javax.swing.JButton btnIngresarAlimentoIngerido2;
