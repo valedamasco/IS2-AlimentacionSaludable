@@ -1,18 +1,18 @@
 package dominio;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+
 
 public class ComposicionAlimentoTest {
 
-    public ComposicionAlimentoTest() {
-    }
-
-
+	
     @Test
     public void testGetsSetsNull() {
-        ComposicionAlimento composicion = new ComposicionAlimento(null, 0);
-        assertEquals(composicion.getNutriente(), "No definido");
+        ComposicionAlimento composicion = new ComposicionAlimento();
+        assertEquals(composicion.getNutriente(), "");
     }
 
     @Test

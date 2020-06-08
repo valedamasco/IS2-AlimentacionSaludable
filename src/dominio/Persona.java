@@ -1,6 +1,6 @@
 package dominio;
 
-import java.util.Objects;
+
 import java.io.Serializable;
 import javax.swing.ImageIcon;
 
@@ -30,7 +30,11 @@ public class Persona implements Serializable {
     }
 
     public void setNombre(String unNombre) {
-        this.nombre = unNombre;
+        if (unNombre == null || unNombre.isEmpty()) {
+            this.nombre = "Nombre no ingresado";
+        } else {
+            this.nombre = unNombre;
+        }
     }
 
     public String getApellido() {

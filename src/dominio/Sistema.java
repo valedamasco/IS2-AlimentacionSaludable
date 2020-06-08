@@ -1,14 +1,14 @@
 package dominio;
 
 
+import datechooser.beans.DateChooserCombo;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-
-import java.util.Currency;
+import java.util.Calendar;
 import javax.swing.ImageIcon;
 
 public final class Sistema implements Serializable {
@@ -267,7 +267,7 @@ public final class Sistema implements Serializable {
         return fueAgregadaConversacion;
     }
 
-    private boolean agregarConversacionALaLista(Conversacion nuevaConversacion) {
+    public boolean agregarConversacionALaLista(Conversacion nuevaConversacion) {
         boolean fueAgregadaConversacion = false;
         if (!getListaConversaciones().contains(nuevaConversacion)) {
             getListaConversaciones().add(nuevaConversacion);
@@ -276,18 +276,14 @@ public final class Sistema implements Serializable {
         return fueAgregadaConversacion;
     }
 
-    public String[] getListaNombresProfesionalesConversaciones(String nombreUsuarioConversacion) {
-        String[] nombresProfesionales = new String[getListaConversaciones().size()];
+    public String[] getListaNombresProfesionales() {
+        String[] nombresProfesionales = new String[this.getListaProfesionales().size()];
         ArrayList<String> nombresIngresados = new ArrayList<>();
-        for (int i = 0; i < getListaConversaciones().size(); i++) {
-            String nombreCompleto = getListaConversaciones().get(i).getProfesional().getNombreCompleto();
-            String nombreUsuarioCompleto = getListaConversaciones().get(i).getUsuario().getNombreCompleto();
-            if (!nombresIngresados.contains(nombreCompleto)) {
-                if (nombreUsuarioCompleto.equals(nombreUsuarioConversacion)) {
-                    nombresProfesionales[i] = nombreCompleto;
-                    nombresIngresados.add(nombreCompleto);
-                }
-            }
+        String nombreCompleto;
+        for (int i = 0; i < this.getListaProfesionales().size(); i++) {
+            nombreCompleto = getListaProfesionales().get(i).getNombreCompleto();
+            nombresProfesionales[i] = nombreCompleto;
+            nombresIngresados.add(nombreCompleto);            
         }
         return nombresProfesionales;
     }
@@ -314,13 +310,21 @@ public final class Sistema implements Serializable {
 
     public String getConversacion(String nombreCompletoProfesional, String nombreCompletoUsuario) {
         String retorno = "No hay conversación disponible.";
+        Conversacion conversacionActual = null;
         for (int i = 0; i < getListaConversaciones().size(); i++) {
-            Conversacion conversacionActual = getListaConversaciones().get(i);
+            conversacionActual = getListaConversaciones().get(i);
             String nombreCompletoProfesionalActual = conversacionActual.getProfesional().getNombreCompleto();
             String nombreUsuarioActual = conversacionActual.getUsuario().getNombreCompleto();
             if (nombreCompletoProfesionalActual.equals(nombreCompletoProfesional) && nombreUsuarioActual.equals(nombreCompletoUsuario)) {
-                return conversacionActual.toString();
+                retorno =  conversacionActual.toString();
             }
+        }
+        if (retorno.equals("No hay conversación disponible.")){
+            Persona usuario = this.getPersonaLogueada();
+            Persona profesional = this.getProfesionalPorNombre(nombreCompletoProfesional);
+            conversacionActual = new Conversacion(usuario, profesional);
+            this.getListaConversaciones().add(conversacionActual);
+            retorno =  conversacionActual.toString();
         }
         return retorno;
     }
@@ -365,8 +369,7 @@ public final class Sistema implements Serializable {
 
     public boolean agregarIngestaAUsuario(ArrayList<Ingesta> listaIngestasDelUsuario, String fechaIngesta, String nuevoAlimento) {
         boolean ingestaAgregada = false;
-        if (listaIngestasDelUsuario != null) {
-            
+        if (listaIngestasDelUsuario != null) {            
                 if (yaExisteIngestaEnEsaFecha(listaIngestasDelUsuario, fechaIngesta)) {
                     for (int i = 0; i < listaIngestasDelUsuario.size(); i++) {
                         if (listaIngestasDelUsuario.get(i).getFechaDeIngesta().equals(fechaIngesta)) {
@@ -392,7 +395,8 @@ public final class Sistema implements Serializable {
         boolean existe = false;
         if (listaIngestasDelUsuario != null) {
             for (int i = 0; i < listaIngestasDelUsuario.size(); i++) {
-                if (listaIngestasDelUsuario.get(i).getFechaDeIngesta().equals(fechaIngesta)) {
+                if (listaIngestasDelUsuario.get(i).getFechaDeIngesta()!= null
+                        && listaIngestasDelUsuario.get(i).getFechaDeIngesta().equals(fechaIngesta)) {
                     existe = true;
                 }
             }
@@ -512,5 +516,14 @@ public final class Sistema implements Serializable {
         } else {
             return new String[0];
         }
+    }
+    
+    public boolean verificarFechas(DateChooserCombo fehcaNacimiento, DateChooserCombo fechaGraduacion){
+        boolean verifico = false;
+        Calendar fechaNacimiento = fehcaNacimiento.getCurrent();
+        fechaNacimiento.add(Calendar.YEAR, 18);
+        Calendar fechaGruadiacion = fechaGraduacion.getCurrent();
+        verifico = fechaNacimiento.before(fechaGruadiacion);
+        return verifico;
     }
 }

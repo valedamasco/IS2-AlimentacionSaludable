@@ -7,18 +7,16 @@ import org.junit.Test;
 
 public class AlimentoTest {
 
-    public AlimentoTest() {
-    }
-
+	  
     @Test
     public void testSetsGetsNullTipo() {
-        Alimento alimentoTest = new Alimento(null, null, null, null);
-        assertEquals(alimentoTest.getTipoAlimento(), "No definido");
+        Alimento alimentoTest = new Alimento();
+        assertEquals(alimentoTest.getTipoAlimento(), "");
     }
 
     @Test
     public void testSetsGetsNullListaNutrientes() {
-        Alimento alimentoTest = new Alimento(null, null, null, null);
+        Alimento alimentoTest = new Alimento();
         assertEquals(alimentoTest.getListaNutrientesConProporcion().size(), 0);
     }
 
@@ -60,14 +58,14 @@ public class AlimentoTest {
 
     @Test
     public void testSetsGetsTipoDatosVacios() {
-        Alimento alimentoTest = new Alimento("", "", null, null);
-        assertEquals(alimentoTest.getTipoAlimento(), "No definido");
+        Alimento alimentoTest = new Alimento();
+        assertEquals(alimentoTest.getTipoAlimento(), "");
     }
 
     @Test
     public void testToStringNullNombre() {
-        Alimento alimentoTest = new Alimento("", "", null, null);
-        assertEquals(alimentoTest.getNombre(), "Nombre de alimento no ingresado");
+        Alimento alimentoTest = new Alimento();
+        assertEquals(alimentoTest.getNombre(), "");
     }
 
     @Test

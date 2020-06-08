@@ -1,15 +1,12 @@
 package dominio;
 
-import java.util.ArrayList;
-import javax.swing.ImageIcon;
-import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
+
 
 public class UsuarioTest {
 
-    public UsuarioTest() {
-    }
 
     @Test
     public void testGetsSetsVaciosListaAlimentos() {
@@ -31,8 +28,9 @@ public class UsuarioTest {
 
     @Test
     public void testGetsSetsNullNombre() {
-        Usuario usuario = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(usuario.getNombre(), "Nombre no ingresado");
+        Persona persona = new Persona();
+        Usuario usuario = new Usuario(persona);
+        assertEquals(usuario.getNombre(), "");
     }
 
     @Test
@@ -49,8 +47,9 @@ public class UsuarioTest {
 
     @Test
     public void testGetsSetsNullNacionalidad() {
-        Usuario usuario = new Usuario(null, null, null, null, null, null, null, null);
-        assertEquals(usuario.getNacionalidad(), "Nacionalidad no ingresada");
+        Persona persona = new Persona();
+        Usuario usuario = new Usuario(persona);
+        assertEquals(usuario.getNacionalidad(), "");
     }
 
     @Test

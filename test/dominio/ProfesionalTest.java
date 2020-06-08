@@ -5,10 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class ProfesionalTest {
-
-    public ProfesionalTest() {
-    }
-
+	
+	  
     @Test
     public void testGetsSetsDatosCorrectosGraduacion() {
         String nombre = "Martin";
@@ -68,19 +66,12 @@ public class ProfesionalTest {
 
     @Test
     public void testToStringDatosNull() {
-        String nombre = null;
-        String apellido = null;
-        String fechaNacimiento = null;
-        ImageIcon fotoPerfil = null;
-        String tituloProf = null;
-        String fechaGrad = null;
-        String paisGraduacion = null;
-        Profesional prof = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil,
-                tituloProf, fechaGrad, paisGraduacion);
-        String toStringEperado = "Nombre no ingresado";
+        Persona persona = new Persona();
+        Profesional prof = new Profesional(persona);
+        String toStringEperado = "";
         assertEquals(prof.toString(), toStringEperado);
     }
-
+    @Test
     public void testToStringDatosVacios() {
         String nombre = "";
         String apellido = "";

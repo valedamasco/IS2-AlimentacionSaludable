@@ -2,7 +2,6 @@ package dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public final class Conversacion implements Serializable {
 
@@ -87,7 +86,7 @@ public final class Conversacion implements Serializable {
 
     @Override
     public String toString() {
-        String retorno = "No hay mensajes para mostrar";
+        String retorno = "Inicio de conversacion";
         if (!getListaMensajes().isEmpty()) {
             retorno = "";
             retorno = listaMensajes.stream().map((InformacionMensaje info) -> "\n" + info.getRemitente() + "\n"
